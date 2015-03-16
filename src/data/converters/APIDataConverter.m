@@ -70,7 +70,8 @@
     
     ingredient.name = APIIngredient.information.name;
     ingredient.department = APIIngredient.information.department;
-    ingredient.quantity = APIIngredient.metricQuantity;
+    ingredient.quantity = [[NSString stringWithFormat:@"%.2f", APIIngredient.metricQuantity] doubleValue];
+    ingredient.quantityUnit = APIIngredient.metricUnit;
     
     return ingredient;
 }

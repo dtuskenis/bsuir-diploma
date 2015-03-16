@@ -15,6 +15,8 @@
 @property (nonatomic, weak) IBOutlet UILabel *leftLabel;
 @property (nonatomic, weak) IBOutlet UILabel *rightLabel;
 
+@property (nonatomic, weak) IBOutlet NSLayoutConstraint *leftLabelWidth;
+
 @end
 
 @implementation IngredientCell
@@ -28,7 +30,10 @@
 
 - (void)fillWithItem:(Ingredient *)item {
     self.leftLabel.text = item.name;
-    self.rightLabel.text = @(item.quantity).stringValue;
+    [self.leftLabel sizeToFit];
+    self.leftLabelWidth.constant = self.leftLabel.frame.size.width;
+    
+    self.rightLabel.text = [NSString stringWithFormat:@"%@ %@", @(item.quantity).stringValue, item.quantityUnit];
 }
 
 @end

@@ -17,6 +17,6 @@ typedef NS_ENUM(NSUInteger, IngredientQuantityUnit) {
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *department;
 @property (nonatomic, assign) CGFloat quantity;
-@property (nonatomic, assign) IngredientQuantityUnit quantityUnit;
+@property (nonatomic, assign) NSString *quantityUnit;
 
 @end

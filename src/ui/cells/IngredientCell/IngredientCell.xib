@@ -17,8 +17,11 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AfM-mW-M2r" userLabel="Wrapper View">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TGc-ht-fVG" userLabel="Left Label">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="236" translatesAutoresizingMaskIntoConstraints="NO" id="TGc-ht-fVG" userLabel="Left Label">
                                 <rect key="frame" x="12" y="0.0" width="236" height="43"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="236" id="VGB-ee-qO8"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -26,7 +29,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qvR-EM-N3n" userLabel="Right Label">
                                 <rect key="frame" x="248" y="0.0" width="60" height="43"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="60" id="lKP-zU-CiI"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="lKP-zU-CiI"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -56,6 +59,7 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <connections>
                 <outlet property="leftLabel" destination="TGc-ht-fVG" id="JFN-nE-TiD"/>
+                <outlet property="leftLabelWidth" destination="VGB-ee-qO8" id="ucb-zQ-xUX"/>
                 <outlet property="rightLabel" destination="qvR-EM-N3n" id="b9T-HL-nHT"/>
             </connections>
             <point key="canvasLocation" x="185" y="394"/>
