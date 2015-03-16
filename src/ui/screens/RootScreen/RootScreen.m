@@ -77,7 +77,7 @@ static NSString* const kCategories = @"Categories";
         [self.view performTransitionToView:self.recentRecipesListViewController.view animated:YES];
         self.navigationItem.title = kRecentRecipes;
     }];
-    [self.menuViewContainer.view addItemWithTitle:kFavorites icon:[UIImage imageNamed:@"icon_favorite_yes"] action:^{
+    [self.menuViewContainer.view addItemWithTitle:kFavorites icon:[UIImage imageNamed:@"icon_favorite_no"] action:^{
         [self.view hideMenu];
         [self.view performTransitionToView:self.favoriteRecipesListViewController.view animated:YES];
         self.navigationItem.title = kFavorites;
