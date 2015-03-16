@@ -35,6 +35,7 @@
 - (void)prepareForReuse {
     [super prepareForReuse];
     [self.imageView hnk_cancelSetImage];
+    self.titleLabelHeight.constant = 0;
 }
 
 - (void)setItem:(Recipe *)item {
