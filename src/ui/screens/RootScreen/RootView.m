@@ -21,10 +21,22 @@
 @implementation RootView
 
 - (void)performTransitionToView:(UIView *)view animated:(BOOL)animated {
-    [self.transitionView removeFromSuperview];
-    self.transitionView = view;
-    self.transitionView.frame = self.bounds;
-    [self.drawerView.centerView addSubview:self.transitionView];
+    NSTimeInterval animationDuration = animated ? 0.3 : 0;
+    
+    if (self.transitionView != view) {
+        if (self.transitionView) {
+            [UIView transitionFromView:self.transitionView
+                                toView:view
+                              duration:animationDuration
+                               options:UIViewAnimationOptionTransitionCrossDissolve
+                            completion:^(BOOL finished) {}];
+            self.transitionView = view;
+        } else {
+            self.transitionView = view;
+            self.transitionView.frame = self.bounds;
+            [self.drawerView.centerView addSubview:self.transitionView];
+        }
+    }
 }
 
 - (void)showMenu {
