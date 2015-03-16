@@ -67,14 +67,17 @@ static NSString* const kContentSizeKey = @"contentSize";
 #pragma mark UITableViewDelegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.row == self.selectedIndex) {
-        [tableView deselectRowAtIndexPath:indexPath animated:NO];
-    } else {
-        [tableView deselectRowAtIndexPath:indexPath animated:YES];
-        self.selectedIndex = indexPath.row;
-    }
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
     
-    [tableView reloadRowsAtIndexPaths:[tableView indexPathsForVisibleRows] withRowAnimation:UITableViewRowAnimationFade];
+    MenuViewCell *previousCell = (MenuViewCell *)[tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:self.selectedIndex inSection:0]];
+    MenuViewCell *selectedCell = (MenuViewCell *)[tableView cellForRowAtIndexPath:indexPath];
+    
+    previousCell.checked = NO;
+    selectedCell.checked = YES;
+    
+    self.selectedIndex = indexPath.row;
+    
+    [tableView reloadData];
     
     MenuViewItem *item = [self.items objectAtIndex:indexPath.row];
     if (item.action) {
