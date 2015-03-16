@@ -8,21 +8,49 @@
 
 #import "AppDelegate.h"
 
+#import "ConfigurationManager.h"
 #import "ScreenManager.h"
+#import "ServiceManager.h"
+#import "ServiceProvider.h"
 #import "RecipesManager.h"
 #import "UIColor+Custom.h"
 #import "UIImage+Solid.h"
 
-@interface AppDelegate ()
+@interface AppDelegate () <ServiceProvider>
 
 @property (nonatomic, strong) ScreenManager *screenManager;
+@property (nonatomic, strong) NSMutableDictionary *services;
 
 @end
 
 @implementation AppDelegate
 
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        self.services = [NSMutableDictionary dictionary];
+    }
+    return self;
+}
+
+#pragma mark -
+#pragma mark ServiceProvider
+
+- (id)getServiceWithClass:(Class)serviceClass {
+    return [self.services objectForKey:NSStringFromClass(serviceClass)];
+}
+
+- (void)registerService:(id)service withClass:(Class)serviceClass {
+    [self.services setObject:service forKey:NSStringFromClass(serviceClass)];
+}
+
+#pragma mark -
+#pragma mark UIApplicationDelegate
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    // Global appearance
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     [[UINavigationBar appearance] setBackgroundImage:[UIImage imageWithSize:CGSizeMake(320, 64) color:[UIColor applicationDefaultColor]] forBarMetrics:UIBarMetricsDefault];
     [[UINavigationBar appearance] setShadowImage:[UIImage new]];
@@ -32,7 +60,15 @@
                                                            NSForegroundColorAttributeName : [UIColor applicationTintColor]
                                                            }];
     
-    self.screenManager = [[ScreenManager alloc] init];
+    // Applications services
+    RecipesManager *recipesManager = [[RecipesManager alloc] initWithServiceManager:[ServiceManager sharedInstance]];
+    [self registerService:recipesManager withClass:[RecipesManager class]];
+    
+    ConfigurationManager *configurationManager = [[ConfigurationManager alloc] init];
+    [self registerService:configurationManager withClass:[ConfigurationManager class]];
+    
+    // Start UI
+    self.screenManager = [[ScreenManager alloc] initWithServiceProvider:self];
     [self.screenManager initializeWindow];
     
     return YES;

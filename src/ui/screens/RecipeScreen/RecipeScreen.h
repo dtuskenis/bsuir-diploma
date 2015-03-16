@@ -11,11 +11,14 @@
 #import "RecipeView.h"
 
 @class Recipe;
+@class RecipesManager;
 
 @interface RecipeScreen : Screen
 
 @property (nonatomic, strong) RecipeView *view;
 
-- (instancetype)initWithRecipe:(Recipe *)recipe;
+- (instancetype)initWithRecipe:(Recipe *)recipe
+                recipesManager:(RecipesManager *)recipesManager
+                 screenManager:(ScreenManager *)screenManager;
 
 @end

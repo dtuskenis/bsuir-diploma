@@ -10,8 +10,13 @@
 
 #import "RootView.h"
 
+@class RecipesManager;
+
 @interface RootScreen : Screen
 
 @property (nonatomic, strong) RootView *view;
+
+- (instancetype)initWithRecipesManager:(RecipesManager *)recipesManager
+                         screenManager:(ScreenManager *)screenManager;
 
 @end

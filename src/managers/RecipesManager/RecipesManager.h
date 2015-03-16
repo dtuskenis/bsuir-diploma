@@ -10,15 +10,18 @@
 
 @class Recipe;
 @class SearchRequest;
+@class ServiceManager;
 
 @protocol RecipesManagerObserver;
 
-@interface RecipesManager : SharedInstance
+@interface RecipesManager : NSObject
 
 @property (nonatomic, readonly) NSArray *favorites;
 @property (nonatomic, readonly) NSArray *recent;
 
 @property (nonatomic, assign) NSInteger maximumNumberOfRecentlyViewedRecipes;
+
+- (instancetype)initWithServiceManager:(ServiceManager *)serviceManager;
 
 - (void)searchRecipesWithRequest:(SearchRequest *)searchRequest
                     successBlock:(void (^)(NSArray *searchResults))successBlock

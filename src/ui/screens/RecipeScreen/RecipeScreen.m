@@ -16,14 +16,19 @@
 
 @property (nonatomic, strong) Recipe *recipe;
 
+@property (nonatomic, strong) RecipesManager *recipesManager;
+
 @end
 
 @implementation RecipeScreen
 
-- (instancetype)initWithRecipe:(Recipe *)recipe {
-    self = [super initWithScreenManager:nil];
+- (instancetype)initWithRecipe:(Recipe *)recipe
+                recipesManager:(RecipesManager *)recipesManager
+                 screenManager:(ScreenManager *)screenManager {
+    self = [super initWithScreenManager:screenManager];
     if (self) {
         self.recipe = recipe;
+        self.recipesManager = recipesManager;
     }
     return self;
 }
@@ -34,7 +39,7 @@
     self.view.recipe = self.recipe;
     
     FavoriteButton *favoriteButton = [[FavoriteButton alloc] init];
-    [favoriteButton setSelected:[[RecipesManager sharedInstance] isFavoriteRecipe:self.recipe]];
+    [favoriteButton setSelected:[self.recipesManager isFavoriteRecipe:self.recipe]];
     [favoriteButton addTarget:self action:@selector(favoriteButtonTouched:) forControlEvents:UIControlEventTouchUpInside];
     
     self.navigationItem.title = @"Details";
@@ -44,17 +49,17 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    [[RecipesManager sharedInstance] getRecipeWithIdentifier:self.recipe.identifier successBlock:^(Recipe *recipe) {
+    [self.recipesManager getRecipeWithIdentifier:self.recipe.identifier successBlock:^(Recipe *recipe) {
         self.view.recipe = recipe;
-        [[RecipesManager sharedInstance] setRecipeRecentlyViewed:self.recipe];
+        [self.recipesManager setRecipeRecentlyViewed:self.recipe];
     } failureBlock:^(NSError *error) {}];
 }
 
 - (IBAction)favoriteButtonTouched:(FavoriteButton *)sender {
     if (sender.selected) {
-        [[RecipesManager sharedInstance] addRecipeToFavorites:self.recipe];
+        [self.recipesManager addRecipeToFavorites:self.recipe];
     } else {
-        [[RecipesManager sharedInstance] removeRecipeFromFavorites:self.recipe];
+        [self.recipesManager removeRecipeFromFavorites:self.recipe];
     }
 }
 

@@ -10,8 +10,13 @@
 
 #import "SearchView.h"
 
+@class RecipesManager;
+
 @interface SearchScreen : Screen
 
 @property (nonatomic, strong) SearchView *view;
+
+- (instancetype)initWithRecipesManager:(RecipesManager *)recipesManager
+                         screenManager:(ScreenManager *)screenManager;
 
 @end

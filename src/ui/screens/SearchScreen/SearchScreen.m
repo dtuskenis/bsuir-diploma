@@ -13,9 +13,20 @@
 
 @interface SearchScreen () <SearchViewDelegate, UISearchBarDelegate>
 
+@property (nonatomic, strong) RecipesManager *recipesManager;
+
 @end
 
 @implementation SearchScreen
+
+- (instancetype)initWithRecipesManager:(RecipesManager *)recipesManager
+                         screenManager:(ScreenManager *)screenManager {
+    self = [super initWithScreenManager:screenManager];
+    if (self) {
+        self.recipesManager = recipesManager;
+    }
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -33,7 +44,7 @@
     searchRequest.searchRange = NSMakeRange(0, 30);
     
     [self.view beginRefreshing];
-    [[RecipesManager sharedInstance] searchRecipesWithRequest:searchRequest successBlock:^(NSArray *searchResults) {
+    [self.recipesManager searchRecipesWithRequest:searchRequest successBlock:^(NSArray *searchResults) {
         self.view.searchResults = searchResults;
         [self.view endRefreshing];
     } failureBlock:^(NSError *error) {

@@ -183,6 +183,7 @@
 		558392EF1AB44032002752EF /* RecipesListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RecipesListView.m; path = controllers/RecipesListViewController/RecipesListView.m; sourceTree = "<group>"; };
 		558392F21AB44E99002752EF /* FavoriteButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FavoriteButton.h; path = FavoriteButton/FavoriteButton.h; sourceTree = "<group>"; };
 		558392F31AB44E99002752EF /* FavoriteButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FavoriteButton.m; path = FavoriteButton/FavoriteButton.m; sourceTree = "<group>"; };
+		558392F61AB6DC2B002752EF /* ServiceProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ServiceProvider.h; path = protocols/ServiceProvider.h; sourceTree = "<group>"; };
 		559AAD261A8F53EC00FB46D3 /* QMKExecution+Protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "QMKExecution+Protected.h"; sourceTree = "<group>"; };
 		559AAD271A8F53EC00FB46D3 /* QMKExecution.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QMKExecution.h; sourceTree = "<group>"; };
 		559AAD281A8F53EC00FB46D3 /* QMKExecution.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QMKExecution.m; sourceTree = "<group>"; };
@@ -611,6 +612,14 @@
 			name = FavoriteButton;
 			sourceTree = "<group>";
 		};
+		558392F51AB6DB78002752EF /* protocols */ = {
+			isa = PBXGroup;
+			children = (
+				558392F61AB6DC2B002752EF /* ServiceProvider.h */,
+			);
+			name = protocols;
+			sourceTree = "<group>";
+		};
 		559AACD01A8F53EC00FB46D3 /* com.qulix.mobilekit.ios */ = {
 			isa = PBXGroup;
 			children = (
@@ -1031,6 +1040,7 @@
 				55D7F38E1A67EE7C004E4EB0 /* main */,
 				55D7F3961A67EF54004E4EB0 /* managers */,
 				555373791AA4535600D9399B /* patterns */,
+				558392F51AB6DB78002752EF /* protocols */,
 				551B21581A6A7BF7005A34C7 /* ui */,
 			);
 			path = src;

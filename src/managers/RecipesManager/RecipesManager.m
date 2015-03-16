@@ -18,6 +18,8 @@ static NSString* const kRecipesCacheKey = @"recipes";
 
 @property (nonatomic, strong) QMKWeakSet *observers;
 
+@property (nonatomic, strong) ServiceManager *serviceManager;
+
 @property (nonatomic, strong) NSMutableArray *favoriteRecipes;
 @property (nonatomic, strong) NSMutableArray *recentRecipes;
 
@@ -25,9 +27,10 @@ static NSString* const kRecipesCacheKey = @"recipes";
 
 @implementation RecipesManager
 
-- (instancetype)init {
+- (instancetype)initWithServiceManager:(ServiceManager *)serviceManager {
     self = [super init];
     if (self) {
+        self.serviceManager = serviceManager;
         self.observers = [[QMKWeakSet alloc] init];
         self.maximumNumberOfRecentlyViewedRecipes = 10;
         [self initRecipes];
@@ -46,13 +49,13 @@ static NSString* const kRecipesCacheKey = @"recipes";
 - (void)searchRecipesWithRequest:(SearchRequest *)searchRequest
                     successBlock:(void (^)(NSArray *searchResults))successBlock
                     failureBlock:(void (^)(NSError *error))failureBlock {
-    [[ServiceManager sharedInstance] searchRecipesWithRequest:searchRequest successBlock:successBlock failureBlock:failureBlock];
+    [self.serviceManager searchRecipesWithRequest:searchRequest successBlock:successBlock failureBlock:failureBlock];
 }
 
 - (void)getRecipeWithIdentifier:(NSString *)identifier
                    successBlock:(void (^)(Recipe *recipe))successBlock
                    failureBlock:(void (^)(NSError *error))failureBlock {
-    [[ServiceManager sharedInstance] getRecipeWithIdentifier:identifier successBlock:successBlock failureBlock:failureBlock];
+    [self.serviceManager getRecipeWithIdentifier:identifier successBlock:successBlock failureBlock:failureBlock];
 }
 
 - (void)addRecipeToFavorites:(Recipe *)recipe {

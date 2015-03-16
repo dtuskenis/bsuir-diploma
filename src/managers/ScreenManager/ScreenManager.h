@@ -11,9 +11,13 @@
 @class Recipe;
 @class Screen;
 
+@protocol ServiceProvider;
+
 @interface ScreenManager : NSObject
 
 @property (nonatomic, weak, readonly) Screen *currentScreen;
+
+- (instancetype)initWithServiceProvider:(id<ServiceProvider>)serviceProvider;
 
 - (void)initializeWindow;
 

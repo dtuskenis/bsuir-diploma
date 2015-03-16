@@ -24,9 +24,20 @@ static NSString* const kCategories = @"Categories";
 @property (nonatomic, strong) RecipesListViewController *recentRecipesListViewController;
 @property (nonatomic, strong) RecipesListViewController *favoriteRecipesListViewController;
 
+@property (nonatomic, strong) RecipesManager *recipesManager;
+
 @end
 
 @implementation RootScreen
+
+- (instancetype)initWithRecipesManager:(RecipesManager *)recipesManager
+                         screenManager:(ScreenManager *)screenManager {
+    self = [super initWithScreenManager:screenManager];
+    if (self) {
+        self.recipesManager = recipesManager;
+    }
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -37,10 +48,10 @@ static NSString* const kCategories = @"Categories";
     
     [self configureMenu];
     
-    self.recentRecipesListViewController = [[RecipesListViewController alloc] initWithRecipes:[RecipesManager sharedInstance].recent];
+    self.recentRecipesListViewController = [[RecipesListViewController alloc] initWithRecipes:self.recipesManager.recent];
     self.recentRecipesListViewController.delegate = self;
     
-    self.favoriteRecipesListViewController = [[RecipesListViewController alloc] initWithRecipes:[RecipesManager sharedInstance].favorites];
+    self.favoriteRecipesListViewController = [[RecipesListViewController alloc] initWithRecipes:self.recipesManager.favorites];
     self.favoriteRecipesListViewController.delegate = self;
     
     [self.view performTransitionToView:self.recentRecipesListViewController.view animated:NO];
@@ -48,8 +59,8 @@ static NSString* const kCategories = @"Categories";
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    self.recentRecipesListViewController.recipes = [RecipesManager sharedInstance].recent;
-    self.favoriteRecipesListViewController.recipes = [RecipesManager sharedInstance].favorites;
+    self.recentRecipesListViewController.recipes = self.recipesManager.recent;
+    self.favoriteRecipesListViewController.recipes = self.recipesManager.favorites;
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
