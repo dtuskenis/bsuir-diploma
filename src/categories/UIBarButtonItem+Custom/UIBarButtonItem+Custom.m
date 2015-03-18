@@ -35,10 +35,6 @@
     return [[UIBarButtonItem alloc] initWithCustomView:button];
 }
 
-+ (instancetype)favoriteButtonItemWithTarget:(id)target action:(SEL)action {
-    return [self itemWithImage:[UIImage imageNamed:@"icon_favorite_no"] target:target action:action];
-}
-
 + (instancetype)arrowsItemWithTarget:(id)target action:(SEL)action {
     return [self itemWithImage:[UIImage imageNamed:@"icon_arrows"] target:target action:action];
 }
