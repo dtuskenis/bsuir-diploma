@@ -15,5 +15,6 @@
 + (instancetype)searchItemWithTarget:(id)target action:(SEL)action;
 + (instancetype)commitSearchItemWithTarget:(id)target action:(SEL)action;
 + (instancetype)favoriteButtonItemWithTarget:(id)target action:(SEL)action;
++ (instancetype)arrowsItemWithTarget:(id)target action:(SEL)action;
 
 @end

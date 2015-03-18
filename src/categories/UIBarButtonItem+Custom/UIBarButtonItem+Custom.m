@@ -39,6 +39,10 @@
     return [self itemWithImage:[UIImage imageNamed:@"icon_favorite_no"] target:target action:action];
 }
 
++ (instancetype)arrowsItemWithTarget:(id)target action:(SEL)action {
+    return [self itemWithImage:[UIImage imageNamed:@"icon_arrows"] target:target action:action];
+}
+
 + (instancetype)itemWithImage:(UIImage *)image target:(id)target action:(SEL)action {
     UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithImage:image
                                                              style:UIBarButtonItemStylePlain

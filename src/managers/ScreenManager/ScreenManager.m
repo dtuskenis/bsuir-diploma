@@ -8,12 +8,15 @@
 
 #import "ScreenManager.h"
 
+#import "CategoriesScreen.h"
+#import "ConfigurationManager.h"
 #import "RecipeScreen.h"
 #import "RecipesManager.h"
 #import "RootScreen.h"
 #import "Screen.h"
 #import "SearchScreen.h"
 #import "ServiceProvider.h"
+#import "UINavigationController+Extension.h"
 
 @interface ScreenManager () <UINavigationControllerDelegate>
 
@@ -77,6 +80,30 @@
     SearchScreen *searchScreen = [[SearchScreen alloc] initWithRecipesManager:[self.serviceProvider getServiceWithClass:[RecipesManager class]]
                                                                 screenManager:self];
     [self.navigationController pushViewController:searchScreen animated:YES];
+}
+
+- (void)switchToSearchScreen {
+    SearchScreen *searchScreen = [[SearchScreen alloc] initWithRecipesManager:[self.serviceProvider getServiceWithClass:[RecipesManager class]]
+                                                                screenManager:self];
+    [self.navigationController replaceTopViewControllerWithViewController:searchScreen withCustomTransition:^CATransition *{
+        CATransition *transition = [CATransition animation];
+        [transition setType:kCATransitionFade];
+        [transition setDuration:0.3];
+        [transition setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut]];
+        return transition;
+    }];
+}
+
+- (void)switchToCategoriesScreen {
+    CategoriesScreen *categoriesScreen = [[CategoriesScreen alloc] initWithConfigurationManager:[self.serviceProvider getServiceWithClass:[ConfigurationManager class]]
+                                                                                  screenManager:self];
+    [self.navigationController replaceTopViewControllerWithViewController:categoriesScreen withCustomTransition:^CATransition *{
+        CATransition *transition = [CATransition animation];
+        [transition setType:kCATransitionFade];
+        [transition setDuration:0.3];
+        [transition setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut]];
+        return transition;
+    }];
 }
 
 - (void)goBack {

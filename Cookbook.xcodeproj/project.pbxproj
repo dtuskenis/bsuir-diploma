@@ -37,6 +37,9 @@
 		558392ED1AB43F14002752EF /* RecipesListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 558392EB1AB43F14002752EF /* RecipesListViewController.xib */; };
 		558392F01AB44032002752EF /* RecipesListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 558392EF1AB44032002752EF /* RecipesListView.m */; };
 		558392F41AB44E99002752EF /* FavoriteButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 558392F31AB44E99002752EF /* FavoriteButton.m */; };
+		558392FE1AB9C5C4002752EF /* CategoriesScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 558392FC1AB9C5C4002752EF /* CategoriesScreen.m */; };
+		558392FF1AB9C5C4002752EF /* CategoriesScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 558392FD1AB9C5C4002752EF /* CategoriesScreen.xib */; };
+		558393021AB9C5E2002752EF /* CategoriesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 558393011AB9C5E2002752EF /* CategoriesView.m */; };
 		559AADD41A8F53EC00FB46D3 /* QMKExecution.m in Sources */ = {isa = PBXBuildFile; fileRef = 559AAD281A8F53EC00FB46D3 /* QMKExecution.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		559AADD51A8F53EC00FB46D3 /* QMKExecutionForStatement.m in Sources */ = {isa = PBXBuildFile; fileRef = 559AAD2B1A8F53EC00FB46D3 /* QMKExecutionForStatement.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		559AADD61A8F53EC00FB46D3 /* QMKExecutionStatement.m in Sources */ = {isa = PBXBuildFile; fileRef = 559AAD2D1A8F53EC00FB46D3 /* QMKExecutionStatement.m */; };
@@ -184,6 +187,11 @@
 		558392F21AB44E99002752EF /* FavoriteButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FavoriteButton.h; path = FavoriteButton/FavoriteButton.h; sourceTree = "<group>"; };
 		558392F31AB44E99002752EF /* FavoriteButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FavoriteButton.m; path = FavoriteButton/FavoriteButton.m; sourceTree = "<group>"; };
 		558392F61AB6DC2B002752EF /* ServiceProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ServiceProvider.h; path = protocols/ServiceProvider.h; sourceTree = "<group>"; };
+		558392FB1AB9C5C4002752EF /* CategoriesScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CategoriesScreen.h; path = CategoriesScreen/CategoriesScreen.h; sourceTree = "<group>"; };
+		558392FC1AB9C5C4002752EF /* CategoriesScreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CategoriesScreen.m; path = CategoriesScreen/CategoriesScreen.m; sourceTree = "<group>"; };
+		558392FD1AB9C5C4002752EF /* CategoriesScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CategoriesScreen.xib; path = CategoriesScreen/CategoriesScreen.xib; sourceTree = "<group>"; };
+		558393001AB9C5E2002752EF /* CategoriesView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CategoriesView.h; path = CategoriesScreen/CategoriesView.h; sourceTree = "<group>"; };
+		558393011AB9C5E2002752EF /* CategoriesView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CategoriesView.m; path = CategoriesScreen/CategoriesView.m; sourceTree = "<group>"; };
 		559AAD261A8F53EC00FB46D3 /* QMKExecution+Protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "QMKExecution+Protected.h"; sourceTree = "<group>"; };
 		559AAD271A8F53EC00FB46D3 /* QMKExecution.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QMKExecution.h; sourceTree = "<group>"; };
 		559AAD281A8F53EC00FB46D3 /* QMKExecution.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QMKExecution.m; sourceTree = "<group>"; };
@@ -428,6 +436,7 @@
 		551B215D1A6A7BF7005A34C7 /* screens */ = {
 			isa = PBXGroup;
 			children = (
+				558392FA1AB9C59D002752EF /* CategoriesScreen */,
 				551B21621A6A7BF7005A34C7 /* RecipeScreen */,
 				558392DF1AB439F6002752EF /* RootScreen */,
 				551B216C1A6A7BF7005A34C7 /* SearchScreen */,
@@ -618,6 +627,18 @@
 				558392F61AB6DC2B002752EF /* ServiceProvider.h */,
 			);
 			name = protocols;
+			sourceTree = "<group>";
+		};
+		558392FA1AB9C59D002752EF /* CategoriesScreen */ = {
+			isa = PBXGroup;
+			children = (
+				558392FB1AB9C5C4002752EF /* CategoriesScreen.h */,
+				558392FC1AB9C5C4002752EF /* CategoriesScreen.m */,
+				558392FD1AB9C5C4002752EF /* CategoriesScreen.xib */,
+				558393001AB9C5E2002752EF /* CategoriesView.h */,
+				558393011AB9C5E2002752EF /* CategoriesView.m */,
+			);
+			name = CategoriesScreen;
 			sourceTree = "<group>";
 		};
 		559AACD01A8F53EC00FB46D3 /* com.qulix.mobilekit.ios */ = {
@@ -1165,6 +1186,7 @@
 				551B21741A6A7BF7005A34C7 /* RecipeScreen.xib in Resources */,
 				558392E71AB43AA2002752EF /* RootScreen.xib in Resources */,
 				558392ED1AB43F14002752EF /* RecipesListViewController.xib in Resources */,
+				558392FF1AB9C5C4002752EF /* CategoriesScreen.xib in Resources */,
 				55D7F3921A67EE7C004E4EB0 /* Images.xcassets in Resources */,
 				558392C71AB1E960002752EF /* MenuView.xib in Resources */,
 				551B21791A6A7BF7005A34C7 /* SearchScreen.xib in Resources */,
@@ -1236,6 +1258,7 @@
 				551B21781A6A7BF7005A34C7 /* SearchScreen.m in Sources */,
 				55D273401A989DDF00B4CCAA /* JSONModelError.m in Sources */,
 				559AAE091A8F53EC00FB46D3 /* QMKWeakSet.m in Sources */,
+				558393021AB9C5E2002752EF /* CategoriesView.m in Sources */,
 				55D7F39A1A67EF87004E4EB0 /* ScreenManager.m in Sources */,
 				55B242981A93A10F0000FDC5 /* UIButton+Haneke.m in Sources */,
 				55B84CD51AA9B0E500B82C02 /* MASConstraintMaker.m in Sources */,
@@ -1262,6 +1285,7 @@
 				55D273891A98B62500B4CCAA /* SearchRequest.m in Sources */,
 				55D7F3951A67EE7C004E4EB0 /* main.m in Sources */,
 				55D273831A98B62500B4CCAA /* APIRecipeBrief.m in Sources */,
+				558392FE1AB9C5C4002752EF /* CategoriesScreen.m in Sources */,
 				55B242991A93A10F0000FDC5 /* UIImageView+Haneke.m in Sources */,
 				558392DE1AB43345002752EF /* ConfigurationManager.m in Sources */,
 				559DCBAB1AA4B014005CA160 /* AFSecurityPolicy.m in Sources */,

@@ -23,6 +23,8 @@
 
 - (void)gotoRecipeScreenWithRecipe:(Recipe *)recipe;
 - (void)gotoSearchScreen;
+- (void)switchToSearchScreen;
+- (void)switchToCategoriesScreen;
 
 - (void)goBack;
 

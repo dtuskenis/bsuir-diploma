@@ -10,6 +10,7 @@
 
 #import "RecipesManager.h"
 #import "SearchRequest.h"
+#import "UIBarButtonItem+Custom.h"
 
 @interface SearchScreen () <SearchViewDelegate, UISearchBarDelegate>
 
@@ -32,6 +33,14 @@
     [super viewDidLoad];
     
     self.navigationItem.title = NSLocalizedString(@"Search", nil);
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem arrowsItemWithTarget:self action:@selector(arrowsButtonTouched:)];
+}
+                                              
+#pragma mark -
+#pragma mark Actions
+
+- (IBAction)arrowsButtonTouched:(id)sender {
+    [self.screenManager switchToCategoriesScreen];
 }
 
 #pragma mark -
