@@ -21,4 +21,18 @@
     [self setViewControllers:viewControllers animated:animated];
 }
 
+- (void)replaceTopViewControllerWithViewController:(UIViewController *)viewController withCustomTransition:(CATransition*(^)())transition {
+    if (transition) {
+        [self.view.layer addAnimation:transition() forKey:kCATransition];
+    }
+    [self replaceTopViewControllerWithViewController:viewController animated:NO];
+}
+
+- (void)pushViewController:(UIViewController *)viewController withCustomTransition:(CATransition*(^)())transition {
+    if (transition) {
+        [self.view.layer addAnimation:transition() forKey:kCATransition];
+    }
+    [self pushViewController:viewController animated:NO];
+}
+
 @end

@@ -13,5 +13,8 @@
 @property (nonatomic,readonly) UIViewController *rootViewController;
 
 - (void)replaceTopViewControllerWithViewController:(UIViewController *)viewController animated:(BOOL)animated;
+- (void)replaceTopViewControllerWithViewController:(UIViewController *)viewController withCustomTransition:(CATransition*(^)())transition;
+
+- (void)pushViewController:(UIViewController *)viewController withCustomTransition:(CATransition*(^)())transition;
 
 @end
