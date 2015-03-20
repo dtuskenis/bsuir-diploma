@@ -1,23 +1,25 @@
 //
-//  IndicatorManager.m
+//  IndicatorController.m
 //  Cookbook
 //
-//  Created by Tuskenis, Denis on 1/17/15.
+//  Created by Tuskenis, Denis on 3/20/15.
 //  Copyright (c) 2015 Qulix Systems. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-#import "IndicatorManager.h"
+#import "IndicatorController.h"
+
+#import "IndicatorView.h"
+#import "UIView+Nib.h"
 
 static NSTimeInterval kAnimationDuration = 0.23;
 
-@interface IndicatorManager ()
+@interface IndicatorController ()
 
-@property (nonatomic, strong) UIView *indicatorView;
+@property (nonatomic, strong) IndicatorView *indicatorView;
 
 @end
 
-@implementation IndicatorManager
+@implementation IndicatorController
 
 @synthesize indicatorView = _indicatorView;
 
@@ -33,7 +35,9 @@ static NSTimeInterval kAnimationDuration = 0.23;
     if (self.indicatorView.superview == nil) {
         self.indicatorView.userInteractionEnabled = !userInteractionEnabled;
         self.indicatorView.alpha = 0;
+        self.indicatorView.frame = [self window].bounds;
         [[self window] addSubview:self.indicatorView];
+        self.indicatorView.title = title;
         
         [UIView animateWithDuration:kAnimationDuration animations:^{
             self.indicatorView.alpha = 1;
@@ -55,9 +59,7 @@ static NSTimeInterval kAnimationDuration = 0.23;
 
 - (UIView *)indicatorView {
     if (_indicatorView == nil) {
-        _indicatorView = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-        _indicatorView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-        _indicatorView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.8];
+        _indicatorView = [IndicatorView viewFromNib];
     }
     return _indicatorView;
 }

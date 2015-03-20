@@ -19,7 +19,6 @@
 		551B21931A6A8CA3005A34C7 /* UIColor+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = 551B21921A6A8CA3005A34C7 /* UIColor+Custom.m */; };
 		551B21971A6A902C005A34C7 /* UIImage+Solid.m in Sources */ = {isa = PBXBuildFile; fileRef = 551B21961A6A902C005A34C7 /* UIImage+Solid.m */; };
 		551B219B1A6AA07E005A34C7 /* RecipesManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 551B219A1A6AA07E005A34C7 /* RecipesManager.m */; };
-		551B21A71A6AA7AB005A34C7 /* IndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 551B21A61A6AA7AB005A34C7 /* IndicatorManager.m */; };
 		5553737C1AA4535600D9399B /* SharedInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = 5553737B1AA4535600D9399B /* SharedInstance.m */; };
 		558392A51AB18B29002752EF /* ImageLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 558392A41AB18B29002752EF /* ImageLoader.m */; };
 		558392BB1AB1E7B1002752EF /* MenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 558392BA1AB1E7B1002752EF /* MenuView.m */; };
@@ -114,6 +113,9 @@
 		55D273871A98B62500B4CCAA /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 55D273781A98B62500B4CCAA /* Model.m */; };
 		55D273881A98B62500B4CCAA /* Recipe.m in Sources */ = {isa = PBXBuildFile; fileRef = 55D2737A1A98B62500B4CCAA /* Recipe.m */; };
 		55D273891A98B62500B4CCAA /* SearchRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 55D2737C1A98B62500B4CCAA /* SearchRequest.m */; };
+		55D6926B1ABC525C00BC2932 /* IndicatorController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55D6926A1ABC525C00BC2932 /* IndicatorController.m */; };
+		55D692711ABC559600BC2932 /* IndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 55D692701ABC559600BC2932 /* IndicatorView.m */; };
+		55D692731ABC55A000BC2932 /* IndicatorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55D692721ABC55A000BC2932 /* IndicatorView.xib */; };
 		55D7F3801A67EE1E004E4EB0 /* CookbookTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 55D7F37F1A67EE1E004E4EB0 /* CookbookTests.m */; };
 		55D7F3921A67EE7C004E4EB0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55D7F38B1A67EE7C004E4EB0 /* Images.xcassets */; };
 		55D7F3941A67EE7C004E4EB0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 55D7F3901A67EE7C004E4EB0 /* AppDelegate.m */; };
@@ -153,8 +155,6 @@
 		551B21961A6A902C005A34C7 /* UIImage+Solid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Solid.m"; path = "UIImage+Solid/UIImage+Solid.m"; sourceTree = "<group>"; };
 		551B21991A6AA07E005A34C7 /* RecipesManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RecipesManager.h; path = managers/RecipesManager/RecipesManager.h; sourceTree = "<group>"; };
 		551B219A1A6AA07E005A34C7 /* RecipesManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RecipesManager.m; path = managers/RecipesManager/RecipesManager.m; sourceTree = "<group>"; };
-		551B21A51A6AA7AB005A34C7 /* IndicatorManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IndicatorManager.h; path = managers/IndicatorManager/IndicatorManager.h; sourceTree = "<group>"; };
-		551B21A61A6AA7AB005A34C7 /* IndicatorManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IndicatorManager.m; path = managers/IndicatorManager/IndicatorManager.m; sourceTree = "<group>"; };
 		5553737A1AA4535600D9399B /* SharedInstance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharedInstance.h; sourceTree = "<group>"; };
 		5553737B1AA4535600D9399B /* SharedInstance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharedInstance.m; sourceTree = "<group>"; };
 		555373801AA4551D00D9399B /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
@@ -348,6 +348,11 @@
 		55D2737A1A98B62500B4CCAA /* Recipe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Recipe.m; sourceTree = "<group>"; };
 		55D2737B1A98B62500B4CCAA /* SearchRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchRequest.h; sourceTree = "<group>"; };
 		55D2737C1A98B62500B4CCAA /* SearchRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchRequest.m; sourceTree = "<group>"; };
+		55D692691ABC525C00BC2932 /* IndicatorController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IndicatorController.h; path = controllers/IndicatorController/IndicatorController.h; sourceTree = "<group>"; };
+		55D6926A1ABC525C00BC2932 /* IndicatorController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IndicatorController.m; path = controllers/IndicatorController/IndicatorController.m; sourceTree = "<group>"; };
+		55D6926F1ABC559600BC2932 /* IndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IndicatorView.h; path = IndicatorView/IndicatorView.h; sourceTree = "<group>"; };
+		55D692701ABC559600BC2932 /* IndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IndicatorView.m; path = IndicatorView/IndicatorView.m; sourceTree = "<group>"; };
+		55D692721ABC55A000BC2932 /* IndicatorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = IndicatorView.xib; path = IndicatorView/IndicatorView.xib; sourceTree = "<group>"; };
 		55D7F3601A67EE1E004E4EB0 /* Cookbook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cookbook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55D7F3791A67EE1E004E4EB0 /* CookbookTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CookbookTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		55D7F37E1A67EE1E004E4EB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -427,6 +432,7 @@
 				55B2427D1A9397E00000FDC5 /* CollectionViewCell */,
 				55B84CB71AA9A93C00B82C02 /* DrawerView */,
 				558392F11AB44E7B002752EF /* FavoriteButton */,
+				55D6926E1ABC558000BC2932 /* IndicatorView */,
 				558392B81AB1E79D002752EF /* MenuView */,
 				55CED6091A94EFD7000F8021 /* TableViewCell */,
 			);
@@ -524,15 +530,6 @@
 				551B219A1A6AA07E005A34C7 /* RecipesManager.m */,
 			);
 			name = RecipesManager;
-			sourceTree = "<group>";
-		};
-		551B21A41A6AA778005A34C7 /* IndicatorManager */ = {
-			isa = PBXGroup;
-			children = (
-				551B21A51A6AA7AB005A34C7 /* IndicatorManager.h */,
-				551B21A61A6AA7AB005A34C7 /* IndicatorManager.m */,
-			);
-			name = IndicatorManager;
 			sourceTree = "<group>";
 		};
 		555373791AA4535600D9399B /* patterns */ = {
@@ -753,6 +750,7 @@
 		559DCC2F1AA74C25005CA160 /* controllers */ = {
 			isa = PBXGroup;
 			children = (
+				55D692681ABC523900BC2932 /* IndicatorController */,
 				558392E81AB43EF6002752EF /* RecipesListViewController */,
 			);
 			name = controllers;
@@ -994,6 +992,25 @@
 			path = data/model;
 			sourceTree = "<group>";
 		};
+		55D692681ABC523900BC2932 /* IndicatorController */ = {
+			isa = PBXGroup;
+			children = (
+				55D692691ABC525C00BC2932 /* IndicatorController.h */,
+				55D6926A1ABC525C00BC2932 /* IndicatorController.m */,
+			);
+			name = IndicatorController;
+			sourceTree = "<group>";
+		};
+		55D6926E1ABC558000BC2932 /* IndicatorView */ = {
+			isa = PBXGroup;
+			children = (
+				55D6926F1ABC559600BC2932 /* IndicatorView.h */,
+				55D692701ABC559600BC2932 /* IndicatorView.m */,
+				55D692721ABC55A000BC2932 /* IndicatorView.xib */,
+			);
+			name = IndicatorView;
+			sourceTree = "<group>";
+		};
 		55D7F3571A67EE1E004E4EB0 = {
 			isa = PBXGroup;
 			children = (
@@ -1085,7 +1102,6 @@
 				55B84CB31AA9996200B82C02 /* CacheManager */,
 				558392DB1AB43324002752EF /* ConfigurationManager */,
 				558392A21AB18B0B002752EF /* ImageLoader */,
-				551B21A41A6AA778005A34C7 /* IndicatorManager */,
 				551B21981A6AA063005A34C7 /* RecipesManager */,
 				55D7F3971A67EF59004E4EB0 /* ScreenManager */,
 				55AFB0D91A7D160800D9DDD6 /* ServiceManager */,
@@ -1192,6 +1208,7 @@
 				551B21791A6A7BF7005A34C7 /* SearchScreen.xib in Resources */,
 				558392D21AB305ED002752EF /* MenuViewCell.xib in Resources */,
 				55CED6081A94E827000F8021 /* SearchResultCell.xib in Resources */,
+				55D692731ABC55A000BC2932 /* IndicatorView.xib in Resources */,
 				559DCC421AA8794A005CA160 /* IngredientCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1211,6 +1228,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				559DCBAF1AA4B014005CA160 /* AFURLSessionManager.m in Sources */,
+				55D692711ABC559600BC2932 /* IndicatorView.m in Sources */,
 				55D2733E1A989DDF00B4CCAA /* JSONModelArray.m in Sources */,
 				55B84CD71AA9B0E500B82C02 /* MASViewAttribute.m in Sources */,
 				551B21971A6A902C005A34C7 /* UIImage+Solid.m in Sources */,
@@ -1249,6 +1267,7 @@
 				559DCBA91AA4B014005CA160 /* AFHTTPSessionManager.m in Sources */,
 				55B84CDB1AA9B0E500B82C02 /* View+MASAdditions.m in Sources */,
 				558392CB1AB1ECA2002752EF /* MenuViewItem.m in Sources */,
+				55D6926B1ABC525C00BC2932 /* IndicatorController.m in Sources */,
 				559AADD61A8F53EC00FB46D3 /* QMKExecutionStatement.m in Sources */,
 				558392F01AB44032002752EF /* RecipesListView.m in Sources */,
 				558392F41AB44E99002752EF /* FavoriteButton.m in Sources */,
@@ -1289,7 +1308,6 @@
 				55B242991A93A10F0000FDC5 /* UIImageView+Haneke.m in Sources */,
 				558392DE1AB43345002752EF /* ConfigurationManager.m in Sources */,
 				559DCBAB1AA4B014005CA160 /* AFSecurityPolicy.m in Sources */,
-				551B21A71A6AA7AB005A34C7 /* IndicatorManager.m in Sources */,
 				55B2429A1A93A10F0000FDC5 /* UIView+Haneke.m in Sources */,
 				55B84CD41AA9B0E500B82C02 /* MASConstraint.m in Sources */,
 				55B84CE11AADBC7800B82C02 /* UINavigationController+Extension.m in Sources */,
