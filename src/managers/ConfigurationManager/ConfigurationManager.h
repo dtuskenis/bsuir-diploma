@@ -8,6 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
+@class ServiceManager;
+
 @interface ConfigurationManager : NSObject
+
+- (instancetype)initWithServiceManager:(ServiceManager *)serviceManager;
 
 @end

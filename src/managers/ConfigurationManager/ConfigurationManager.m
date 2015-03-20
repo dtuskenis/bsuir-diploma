@@ -8,6 +8,22 @@
 
 #import "ConfigurationManager.h"
 
+#import "ServiceManager.h"
+
+@interface ConfigurationManager ()
+
+@property (nonatomic, strong) ServiceManager *serviceManager;
+
+@end
+
 @implementation ConfigurationManager
+
+- (instancetype)initWithServiceManager:(ServiceManager *)serviceManager {
+    self = [super init];
+    if (self) {
+        self.serviceManager = serviceManager;
+    }
+    return self;
+}
 
 @end
