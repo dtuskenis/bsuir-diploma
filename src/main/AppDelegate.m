@@ -64,7 +64,7 @@
     RecipesManager *recipesManager = [[RecipesManager alloc] initWithServiceManager:[ServiceManager sharedInstance]];
     [self registerService:recipesManager withClass:[RecipesManager class]];
     
-    ConfigurationManager *configurationManager = [[ConfigurationManager alloc] init];
+    ConfigurationManager *configurationManager = [[ConfigurationManager alloc] initWithServiceManager:[ServiceManager sharedInstance]];
     [self registerService:configurationManager withClass:[ConfigurationManager class]];
     
     // Start UI
