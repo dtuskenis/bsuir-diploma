@@ -18,6 +18,7 @@
 + (APISearchRequest *)APISearchRequestWithSearchRequest:(SearchRequest *)request APIKey:(NSString *)APIKey {
     APISearchRequest *searchRequest = [[APISearchRequest alloc] init];
     searchRequest.title_kw = [request.keywords componentsJoinedByString:@" "];
+    searchRequest.include_primarycat = request.categories;
     searchRequest.pg = 1 + (int)((request.searchRange.location + request.searchRange.length) / 50);
     searchRequest.rpp = ((request.searchRange.location + request.searchRange.length) - (searchRequest.pg - 1) * 50);
     searchRequest.api_key = APIKey;
