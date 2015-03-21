@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -17,8 +17,12 @@
                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fR8-Mi-k9q" userLabel="Shadow View">
                         <rect key="frame" x="0.0" y="0.0" width="156" height="156"/>
                         <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="GCP-mk-KFg">
+                                <rect key="frame" x="68" y="68" width="20" height="20"/>
+                            </activityIndicatorView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Vlc-jD-J7H">
                                 <rect key="frame" x="0.0" y="0.0" width="156" height="156"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ziW-aQ-IhG" userLabel="Title View">
                                 <rect key="frame" x="0.0" y="127" width="156" height="29"/>
@@ -45,11 +49,13 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="0.20000000000000001" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Vlc-jD-J7H" firstAttribute="top" secondItem="fR8-Mi-k9q" secondAttribute="top" id="0TE-IG-ihg"/>
                             <constraint firstItem="ziW-aQ-IhG" firstAttribute="leading" secondItem="fR8-Mi-k9q" secondAttribute="leading" id="3vD-71-BdI"/>
+                            <constraint firstAttribute="centerY" secondItem="GCP-mk-KFg" secondAttribute="centerY" id="ANH-Le-ScI"/>
                             <constraint firstAttribute="trailing" secondItem="ziW-aQ-IhG" secondAttribute="trailing" id="L5o-fF-7WI"/>
+                            <constraint firstAttribute="centerX" secondItem="GCP-mk-KFg" secondAttribute="centerX" id="RfN-VG-pjs"/>
                             <constraint firstItem="Vlc-jD-J7H" firstAttribute="leading" secondItem="fR8-Mi-k9q" secondAttribute="leading" id="WHN-vt-h3r"/>
                             <constraint firstAttribute="trailing" secondItem="Vlc-jD-J7H" secondAttribute="trailing" id="Y8m-5i-1jE"/>
                             <constraint firstAttribute="bottom" secondItem="ziW-aQ-IhG" secondAttribute="bottom" id="cvA-Ko-dmM"/>
