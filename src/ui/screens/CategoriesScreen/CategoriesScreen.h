@@ -8,9 +8,13 @@
 
 #import "Screen.h"
 
+#import "CategoriesView.h"
+
 @class ConfigurationManager;
 
 @interface CategoriesScreen : Screen
+
+@property (nonatomic, strong) CategoriesView *view;
 
 - (instancetype)initWithConfigurationManager:(ConfigurationManager *)configurationManager
                                screenManager:(ScreenManager *)screenManager;

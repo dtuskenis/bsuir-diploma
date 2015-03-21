@@ -8,9 +8,13 @@
 
 #import "CategoriesScreen.h"
 
+#import "ConfigurationManager.h"
+#import "IndicatorController.h"
 #import "UIBarButtonItem+Custom.h"
 
-@interface CategoriesScreen ()
+@interface CategoriesScreen () <CategoriesViewDelegate>
+
+@property (nonatomic, strong) ConfigurationManager *configurationManager;
 
 @end
 
@@ -20,7 +24,7 @@
                                screenManager:(ScreenManager *)screenManager {
     self = [super initWithScreenManager:screenManager];
     if (self) {
-        
+        self.configurationManager = configurationManager;
     }
     return self;
 }
@@ -30,6 +34,8 @@
     
     self.navigationItem.title = NSLocalizedString(@"Categories", nil);
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem arrowsItemWithTarget:self action:@selector(arrowsButtonTouched:)];
+    
+    self.view.categories = [NSArray arrayWithArray:self.configurationManager.recipesCategories];
 }
 
 #pragma mark -
@@ -37,6 +43,13 @@
 
 - (IBAction)arrowsButtonTouched:(id)sender {
     [self.screenManager switchToSearchScreen];
+}
+
+#pragma mark -
+#pragma mark CategoriesViewDelegate
+
+- (void)categoriesView:(CategoriesView *)view didSelectCategory:(RecipesCategory *)category {
+    
 }
 
 @end

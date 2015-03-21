@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CategoriesScreen">
@@ -14,8 +14,28 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT" customClass="CategoriesView">
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="55" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="YZ7-F2-HiI">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="i5M-Pr-FkT" id="BVk-vS-sYu"/>
+                        <outlet property="delegate" destination="i5M-Pr-FkT" id="QAu-kQ-ZLg"/>
+                    </connections>
+                </tableView>
+            </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="YZ7-F2-HiI" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="1Xx-uj-kGZ"/>
+                <constraint firstItem="YZ7-F2-HiI" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="an3-AD-ztb"/>
+                <constraint firstAttribute="trailing" secondItem="YZ7-F2-HiI" secondAttribute="trailing" id="dRm-MA-LZ7"/>
+                <constraint firstAttribute="bottom" secondItem="YZ7-F2-HiI" secondAttribute="bottom" id="jmz-7v-NHK"/>
+            </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+            <connections>
+                <outlet property="delegate" destination="-1" id="U0V-rd-giN"/>
+                <outlet property="tableView" destination="YZ7-F2-HiI" id="MGL-EI-9fd"/>
+            </connections>
             <point key="canvasLocation" x="412" y="443"/>
         </view>
     </objects>

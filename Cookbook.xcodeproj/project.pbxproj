@@ -117,6 +117,9 @@
 		55D692711ABC559600BC2932 /* IndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 55D692701ABC559600BC2932 /* IndicatorView.m */; };
 		55D692731ABC55A000BC2932 /* IndicatorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55D692721ABC55A000BC2932 /* IndicatorView.xib */; };
 		55D692791ABD59CD00BC2932 /* RecipesCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 55D692781ABD59CD00BC2932 /* RecipesCategory.m */; };
+		55D6927C1ABD5A7C00BC2932 /* categories.json in Resources */ = {isa = PBXBuildFile; fileRef = 55D6927B1ABD5A7C00BC2932 /* categories.json */; };
+		55D692801ABD5FAF00BC2932 /* CategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 55D6927F1ABD5FAF00BC2932 /* CategoryCell.m */; };
+		55D692821ABD5FBC00BC2932 /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55D692811ABD5FBC00BC2932 /* CategoryCell.xib */; };
 		55D7F3801A67EE1E004E4EB0 /* CookbookTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 55D7F37F1A67EE1E004E4EB0 /* CookbookTests.m */; };
 		55D7F3921A67EE7C004E4EB0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55D7F38B1A67EE7C004E4EB0 /* Images.xcassets */; };
 		55D7F3941A67EE7C004E4EB0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 55D7F3901A67EE7C004E4EB0 /* AppDelegate.m */; };
@@ -356,6 +359,10 @@
 		55D692721ABC55A000BC2932 /* IndicatorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = IndicatorView.xib; path = IndicatorView/IndicatorView.xib; sourceTree = "<group>"; };
 		55D692771ABD59CD00BC2932 /* RecipesCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipesCategory.h; sourceTree = "<group>"; };
 		55D692781ABD59CD00BC2932 /* RecipesCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipesCategory.m; sourceTree = "<group>"; };
+		55D6927B1ABD5A7C00BC2932 /* categories.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = categories.json; path = config/categories.json; sourceTree = "<group>"; };
+		55D6927E1ABD5FAF00BC2932 /* CategoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CategoryCell.h; path = cells/CategoryCell/CategoryCell.h; sourceTree = "<group>"; };
+		55D6927F1ABD5FAF00BC2932 /* CategoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CategoryCell.m; path = cells/CategoryCell/CategoryCell.m; sourceTree = "<group>"; };
+		55D692811ABD5FBC00BC2932 /* CategoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CategoryCell.xib; path = cells/CategoryCell/CategoryCell.xib; sourceTree = "<group>"; };
 		55D7F3601A67EE1E004E4EB0 /* Cookbook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cookbook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55D7F3791A67EE1E004E4EB0 /* CookbookTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CookbookTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		55D7F37E1A67EE1E004E4EB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -482,6 +489,7 @@
 		551B217A1A6A7CA3005A34C7 /* cells */ = {
 			isa = PBXGroup;
 			children = (
+				55D6927D1ABD5F9800BC2932 /* CategoryCell */,
 				559DCC3D1AA87927005CA160 /* IngredientCell */,
 				551B217B1A6A7CA7005A34C7 /* RecipeCell */,
 				55CED6031A94E7ED000F8021 /* SearchResultCell */,
@@ -1016,6 +1024,24 @@
 			name = IndicatorView;
 			sourceTree = "<group>";
 		};
+		55D6927A1ABD5A5400BC2932 /* config */ = {
+			isa = PBXGroup;
+			children = (
+				55D6927B1ABD5A7C00BC2932 /* categories.json */,
+			);
+			name = config;
+			sourceTree = "<group>";
+		};
+		55D6927D1ABD5F9800BC2932 /* CategoryCell */ = {
+			isa = PBXGroup;
+			children = (
+				55D6927E1ABD5FAF00BC2932 /* CategoryCell.h */,
+				55D6927F1ABD5FAF00BC2932 /* CategoryCell.m */,
+				55D692811ABD5FBC00BC2932 /* CategoryCell.xib */,
+			);
+			name = CategoryCell;
+			sourceTree = "<group>";
+		};
 		55D7F3571A67EE1E004E4EB0 = {
 			isa = PBXGroup;
 			children = (
@@ -1069,6 +1095,7 @@
 		55D7F38A1A67EE7C004E4EB0 /* res */ = {
 			isa = PBXGroup;
 			children = (
+				55D6927A1ABD5A5400BC2932 /* config */,
 				55D7F38B1A67EE7C004E4EB0 /* Images.xcassets */,
 				55D7F38C1A67EE7C004E4EB0 /* Info.plist */,
 			);
@@ -1203,6 +1230,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55D6927C1ABD5A7C00BC2932 /* categories.json in Resources */,
+				55D692821ABD5FBC00BC2932 /* CategoryCell.xib in Resources */,
 				551B21801A6A7CEA005A34C7 /* RecipeCell.xib in Resources */,
 				551B21741A6A7BF7005A34C7 /* RecipeScreen.xib in Resources */,
 				558392E71AB43AA2002752EF /* RootScreen.xib in Resources */,
@@ -1235,6 +1264,7 @@
 				559DCBAF1AA4B014005CA160 /* AFURLSessionManager.m in Sources */,
 				55D692711ABC559600BC2932 /* IndicatorView.m in Sources */,
 				55D2733E1A989DDF00B4CCAA /* JSONModelArray.m in Sources */,
+				55D692801ABD5FAF00BC2932 /* CategoryCell.m in Sources */,
 				55B84CD71AA9B0E500B82C02 /* MASViewAttribute.m in Sources */,
 				551B21971A6A902C005A34C7 /* UIImage+Solid.m in Sources */,
 				558392BB1AB1E7B1002752EF /* MenuView.m in Sources */,

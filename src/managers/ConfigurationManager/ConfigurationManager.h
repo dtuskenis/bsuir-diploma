@@ -14,4 +14,6 @@
 
 - (instancetype)initWithServiceManager:(ServiceManager *)serviceManager;
 
+@property (nonatomic, strong) NSArray *recipesCategories;
+
 @end
