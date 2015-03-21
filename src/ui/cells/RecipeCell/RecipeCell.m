@@ -35,7 +35,7 @@
 - (void)prepareForReuse {
     [super prepareForReuse];
     [self.imageView hnk_cancelSetImage];
-    self.imageView = nil;
+    self.imageView.image = nil;
     self.titleLabelHeight.constant = 0;
 }
 
