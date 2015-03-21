@@ -116,6 +116,7 @@
 		55D6926B1ABC525C00BC2932 /* IndicatorController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55D6926A1ABC525C00BC2932 /* IndicatorController.m */; };
 		55D692711ABC559600BC2932 /* IndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 55D692701ABC559600BC2932 /* IndicatorView.m */; };
 		55D692731ABC55A000BC2932 /* IndicatorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55D692721ABC55A000BC2932 /* IndicatorView.xib */; };
+		55D692791ABD59CD00BC2932 /* RecipesCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 55D692781ABD59CD00BC2932 /* RecipesCategory.m */; };
 		55D7F3801A67EE1E004E4EB0 /* CookbookTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 55D7F37F1A67EE1E004E4EB0 /* CookbookTests.m */; };
 		55D7F3921A67EE7C004E4EB0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55D7F38B1A67EE7C004E4EB0 /* Images.xcassets */; };
 		55D7F3941A67EE7C004E4EB0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 55D7F3901A67EE7C004E4EB0 /* AppDelegate.m */; };
@@ -353,6 +354,8 @@
 		55D6926F1ABC559600BC2932 /* IndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IndicatorView.h; path = IndicatorView/IndicatorView.h; sourceTree = "<group>"; };
 		55D692701ABC559600BC2932 /* IndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IndicatorView.m; path = IndicatorView/IndicatorView.m; sourceTree = "<group>"; };
 		55D692721ABC55A000BC2932 /* IndicatorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = IndicatorView.xib; path = IndicatorView/IndicatorView.xib; sourceTree = "<group>"; };
+		55D692771ABD59CD00BC2932 /* RecipesCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipesCategory.h; sourceTree = "<group>"; };
+		55D692781ABD59CD00BC2932 /* RecipesCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipesCategory.m; sourceTree = "<group>"; };
 		55D7F3601A67EE1E004E4EB0 /* Cookbook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cookbook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55D7F3791A67EE1E004E4EB0 /* CookbookTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CookbookTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		55D7F37E1A67EE1E004E4EB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -985,6 +988,8 @@
 				55D273781A98B62500B4CCAA /* Model.m */,
 				55D273791A98B62500B4CCAA /* Recipe.h */,
 				55D2737A1A98B62500B4CCAA /* Recipe.m */,
+				55D692771ABD59CD00BC2932 /* RecipesCategory.h */,
+				55D692781ABD59CD00BC2932 /* RecipesCategory.m */,
 				55D2737B1A98B62500B4CCAA /* SearchRequest.h */,
 				55D2737C1A98B62500B4CCAA /* SearchRequest.m */,
 			);
@@ -1254,6 +1259,7 @@
 				558392E51AB43A48002752EF /* RootView.m in Sources */,
 				55CED60C1A94EFD7000F8021 /* TableViewCell.m in Sources */,
 				551B21731A6A7BF7005A34C7 /* RecipeScreen.m in Sources */,
+				55D692791ABD59CD00BC2932 /* RecipesCategory.m in Sources */,
 				559AAE1C1A8F557900FB46D3 /* QMKDeallocationGuard.m in Sources */,
 				55B84CD81AA9B0E500B82C02 /* MASViewConstraint.m in Sources */,
 				559DCBA81AA4B014005CA160 /* AFHTTPRequestOperationManager.m in Sources */,
