@@ -18,6 +18,7 @@
 @property (nonatomic, weak) IBOutlet UISearchBar *searchBar;
 
 @property (nonatomic, weak) IBOutlet NSLayoutConstraint *tableViewBottomSpace;
+@property (nonatomic, weak) IBOutlet NSLayoutConstraint *searchBarHeight;
 
 @end
 
@@ -35,6 +36,11 @@
 
 - (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+- (void)layoutIfNeeded {
+    self.searchBarHeight.constant = self.searchBar.hidden ? 0.0 : 44.0;
+    [super layoutIfNeeded];
 }
 
 #pragma mark -

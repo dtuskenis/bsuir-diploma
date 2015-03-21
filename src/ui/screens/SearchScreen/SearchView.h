@@ -16,6 +16,8 @@
 
 @property (nonatomic, weak) IBOutlet id<SearchViewDelegate> delegate;
 
+@property (nonatomic, weak, readonly) UISearchBar *searchBar;
+
 @property (nonatomic, strong) NSArray *searchResults;
 
 - (void)beginRefreshing;

@@ -82,6 +82,13 @@
     [self.navigationController pushViewController:searchScreen animated:YES];
 }
 
+- (void)gotoSearchScreenWithSearchRequest:(SearchRequest *)searchRequest {
+    SearchScreen *searchScreen = [[SearchScreen alloc] initWithSearchRequest:searchRequest
+                                                              recipesManager:[self.serviceProvider getServiceWithClass:[RecipesManager class]]
+                                                               screenManager:self];
+    [self.navigationController pushViewController:searchScreen animated:YES];
+}
+
 - (void)switchToSearchScreen {
     SearchScreen *searchScreen = [[SearchScreen alloc] initWithRecipesManager:[self.serviceProvider getServiceWithClass:[RecipesManager class]]
                                                                 screenManager:self];

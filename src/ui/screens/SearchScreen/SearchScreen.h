@@ -11,6 +11,7 @@
 #import "SearchView.h"
 
 @class RecipesManager;
+@class SearchRequest;
 
 @interface SearchScreen : Screen
 
@@ -18,5 +19,9 @@
 
 - (instancetype)initWithRecipesManager:(RecipesManager *)recipesManager
                          screenManager:(ScreenManager *)screenManager;
+
+- (instancetype)initWithSearchRequest:(SearchRequest *)searchRequest
+                       recipesManager:(RecipesManager *)recipesManager
+                        screenManager:(ScreenManager *)screenManager;
 
 @end

@@ -10,6 +10,7 @@
 
 @class Recipe;
 @class Screen;
+@class SearchRequest;
 
 @protocol ServiceProvider;
 
@@ -23,6 +24,7 @@
 
 - (void)gotoRecipeScreenWithRecipe:(Recipe *)recipe;
 - (void)gotoSearchScreen;
+- (void)gotoSearchScreenWithSearchRequest:(SearchRequest *)searchRequest;
 - (void)switchToSearchScreen;
 - (void)switchToCategoriesScreen;
 
