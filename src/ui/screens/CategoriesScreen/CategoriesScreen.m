@@ -10,6 +10,7 @@
 
 #import "ConfigurationManager.h"
 #import "IndicatorController.h"
+#import "SearchRequest.h"
 #import "UIBarButtonItem+Custom.h"
 
 @interface CategoriesScreen () <CategoriesViewDelegate>
@@ -49,7 +50,10 @@
 #pragma mark CategoriesViewDelegate
 
 - (void)categoriesView:(CategoriesView *)view didSelectCategory:(RecipesCategory *)category {
-    
+    SearchRequest *searchRequest = [[SearchRequest alloc] init];
+    searchRequest.categories = @[category];
+    searchRequest.searchRange = NSMakeRange(0, 30);
+    [self.screenManager gotoSearchScreenWithSearchRequest:searchRequest];
 }
 
 @end
