@@ -25,6 +25,7 @@
     
     if (self.transitionView != view) {
         if (self.transitionView) {
+            view.frame = self.transitionView.frame;
             [UIView transitionFromView:self.transitionView
                                 toView:view
                               duration:animationDuration
