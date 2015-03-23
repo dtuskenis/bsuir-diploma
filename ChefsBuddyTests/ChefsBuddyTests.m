@@ -1,19 +1,19 @@
 //
-//  CookbookTests.m
-//  CookbookTests
+//  ChefsBuddyTests.m
+//  ChefsBuddyTests
 //
-//  Created by Tuskenis, Denis on 1/15/15.
+//  Created by Tuskenis, Denis on 3/23/15.
 //  Copyright (c) 2015 Qulix Systems. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
 
-@interface CookbookTests : XCTestCase
+@interface ChefsBuddyTests : XCTestCase
 
 @end
 
-@implementation CookbookTests
+@implementation ChefsBuddyTests
 
 - (void)setUp {
     [super setUp];

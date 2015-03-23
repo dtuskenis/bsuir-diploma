@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:Cookbook.xcodeproj">
+      location = "self:ChefsBuddy.xcodeproj">
    </FileRef>
 </Workspace>
