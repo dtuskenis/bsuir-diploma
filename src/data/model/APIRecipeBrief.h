@@ -12,9 +12,9 @@
 
 @property (nonatomic, assign) NSInteger recipeId;
 @property (nonatomic, strong) NSString *title;
-@property (nonatomic, strong) NSString<Optional> *cuisine;
-@property (nonatomic, strong) NSString<Optional> *category;
-@property (nonatomic, strong) NSString<Optional> *subcategory;
+@property (nonatomic, strong) NSString *cuisine;
+@property (nonatomic, strong) NSString *category;
+@property (nonatomic, strong) NSString *subcategory;
 @property (nonatomic, assign) NSInteger rating;
 @property (nonatomic, strong) NSString *imageURL;
 @property (nonatomic, assign) NSInteger yieldNumber;

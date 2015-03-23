@@ -18,4 +18,8 @@
     return [[JSONKeyMapper alloc] initWithDictionary:keys];
 }
 
++ (BOOL)propertyIsOptional:(NSString *)propertyName {
+    return YES;
+}
+
 @end

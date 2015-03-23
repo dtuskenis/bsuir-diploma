@@ -17,12 +17,12 @@
 @property (nonatomic, assign) BOOL isHeading;
 @property (nonatomic, strong) NSString* name;
 @property (nonatomic, assign) CGFloat quantity;
-@property (nonatomic, strong) NSString<Optional>* displayQuantity;
-@property (nonatomic, strong) NSString<Optional>* unit;
+@property (nonatomic, strong) NSString* displayQuantity;
+@property (nonatomic, strong) NSString* unit;
 @property (nonatomic, assign) CGFloat metricQuantity;
-@property (nonatomic, strong) NSString<Optional>* metricDisplayQuantity;
-@property (nonatomic, strong) NSString<Optional>* metricUnit;
-@property (nonatomic, strong) NSString<Optional>* preparationNotes;
+@property (nonatomic, strong) NSString* metricDisplayQuantity;
+@property (nonatomic, strong) NSString* metricUnit;
+@property (nonatomic, strong) NSString* preparationNotes;
 @property (nonatomic, strong) APIIngredientInformation* information;
 @property (nonatomic, assign) BOOL isLinked;
 
