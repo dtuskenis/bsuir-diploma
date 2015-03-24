@@ -15,7 +15,7 @@
 @property (nonatomic, weak) IBOutlet UILabel *leftLabel;
 @property (nonatomic, weak) IBOutlet UILabel *rightLabel;
 
-@property (nonatomic, weak) IBOutlet NSLayoutConstraint *leftLabelWidth;
+@property (nonatomic, weak) IBOutlet NSLayoutConstraint *rightLabelWidth;
 
 @end
 
@@ -28,12 +28,18 @@
     [self fillWithItem:item];
 }
 
+- (void)prepareForReuse {
+    [super prepareForReuse];
+    self.rightLabelWidth.constant = 0;
+}
+
 - (void)fillWithItem:(Ingredient *)item {
+    
     self.leftLabel.text = item.name;
-    [self.leftLabel sizeToFit];
-    self.leftLabelWidth.constant = self.leftLabel.frame.size.width;
     
     self.rightLabel.text = [NSString stringWithFormat:@"%@ %@", @(item.quantity).stringValue, item.quantityUnit];
+    [self.rightLabel sizeToFit];
+    self.rightLabelWidth.constant = self.rightLabel.frame.size.width;
 }
 
 @end
