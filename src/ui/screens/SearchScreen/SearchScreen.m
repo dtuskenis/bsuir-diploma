@@ -9,30 +9,30 @@
 #import "SearchScreen.h"
 
 #import "IndicatorController.h"
-#import "RecipesManager.h"
+#import "SearchManager.h"
 #import "SearchRequest.h"
 #import "UIBarButtonItem+Custom.h"
 
 @interface SearchScreen () <SearchViewDelegate, UISearchBarDelegate>
 
-@property (nonatomic, strong) RecipesManager *recipesManager;
+@property (nonatomic, strong) SearchManager *searchManager;
 @property (nonatomic, strong) SearchRequest *searchRequest;
 
 @end
 
 @implementation SearchScreen
 
-- (instancetype)initWithRecipesManager:(RecipesManager *)recipesManager
-                         screenManager:(ScreenManager *)screenManager {
-    return [self initWithSearchRequest:nil recipesManager:recipesManager screenManager:screenManager];
+- (instancetype)initWithSearchManager:(SearchManager *)searchManager
+                        screenManager:(ScreenManager *)screenManager {
+    return [self initWithSearchRequest:nil searchManager:searchManager screenManager:screenManager];
 }
 
 - (instancetype)initWithSearchRequest:(SearchRequest *)searchRequest
-                       recipesManager:(RecipesManager *)recipesManager
+                        searchManager:(SearchManager *)searchManager
                         screenManager:(ScreenManager *)screenManager {
     self = [super initWithScreenManager:screenManager];
     if (self) {
-        self.recipesManager = recipesManager;
+        self.searchManager = searchManager;
         self.searchRequest = searchRequest;
     }
     return self;
@@ -42,7 +42,10 @@
     [super viewDidLoad];
     
     self.navigationItem.title = NSLocalizedString(@"Search", nil);
-    self.navigationItem.rightBarButtonItem = [UIBarButtonItem arrowsItemWithTarget:self action:@selector(arrowsButtonTouched:)];
+    
+    if (self.searchRequest == nil) {
+        self.navigationItem.rightBarButtonItem = [UIBarButtonItem arrowsItemWithTarget:self action:@selector(arrowsButtonTouched:)];
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -53,7 +56,7 @@
         [self.view layoutIfNeeded];
         
         [[IndicatorController sharedInstance] showIndicatorWithTitle:@"Searching..."];
-        [self.recipesManager searchRecipesWithRequest:self.searchRequest successBlock:^(NSArray *searchResults) {
+        [self.searchManager searchRecipesWithRequest:self.searchRequest successBlock:^(NSArray *searchResults) {
             self.view.searchResults = searchResults;
             [[IndicatorController sharedInstance] hideIndicator];
         } failureBlock:^(NSError *error) {
@@ -79,7 +82,7 @@
     searchRequest.searchRange = NSMakeRange(0, 30);
     
     [self.view beginRefreshing];
-    [self.recipesManager searchRecipesWithRequest:searchRequest successBlock:^(NSArray *searchResults) {
+    [self.searchManager searchRecipesWithRequest:searchRequest successBlock:^(NSArray *searchResults) {
         self.view.searchResults = searchResults;
         [self.view endRefreshing];
     } failureBlock:^(NSError *error) {

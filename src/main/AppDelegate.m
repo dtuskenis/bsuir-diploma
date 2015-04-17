@@ -10,6 +10,7 @@
 
 #import "ConfigurationManager.h"
 #import "ScreenManager.h"
+#import "SearchManager.h"
 #import "ServiceManager.h"
 #import "ServiceProvider.h"
 #import "RecipesManager.h"
@@ -63,6 +64,9 @@
     // Applications services
     RecipesManager *recipesManager = [[RecipesManager alloc] initWithServiceManager:[ServiceManager sharedInstance]];
     [self registerService:recipesManager withClass:[RecipesManager class]];
+    
+    SearchManager *seachManager = [[SearchManager alloc] initWithServiceManager:[ServiceManager sharedInstance]];
+    [self registerService:seachManager withClass:[SearchManager class]];
     
     ConfigurationManager *configurationManager = [[ConfigurationManager alloc] initWithServiceManager:[ServiceManager sharedInstance]];
     [self registerService:configurationManager withClass:[ConfigurationManager class]];

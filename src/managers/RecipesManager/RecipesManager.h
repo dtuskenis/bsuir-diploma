@@ -23,10 +23,6 @@
 
 - (instancetype)initWithServiceManager:(ServiceManager *)serviceManager;
 
-- (void)searchRecipesWithRequest:(SearchRequest *)searchRequest
-                    successBlock:(void (^)(NSArray *searchResults))successBlock
-                    failureBlock:(void (^)(NSError *error))failureBlock;
-
 - (void)getRecipeWithIdentifier:(NSString *)identifier
                    successBlock:(void (^)(Recipe *recipe))successBlock
                    failureBlock:(void (^)(NSError *error))failureBlock;

@@ -20,6 +20,7 @@
 		551B21971A6A902C005A34C7 /* UIImage+Solid.m in Sources */ = {isa = PBXBuildFile; fileRef = 551B21961A6A902C005A34C7 /* UIImage+Solid.m */; };
 		551B219B1A6AA07E005A34C7 /* RecipesManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 551B219A1A6AA07E005A34C7 /* RecipesManager.m */; };
 		5553737C1AA4535600D9399B /* SharedInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = 5553737B1AA4535600D9399B /* SharedInstance.m */; };
+		5565EA9B1ADFB75400058E15 /* SearchManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5565EA9A1ADFB75400058E15 /* SearchManager.m */; };
 		558392A51AB18B29002752EF /* ImageLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 558392A41AB18B29002752EF /* ImageLoader.m */; };
 		558392BB1AB1E7B1002752EF /* MenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 558392BA1AB1E7B1002752EF /* MenuView.m */; };
 		558392C21AB1E809002752EF /* ViewContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 558392C11AB1E809002752EF /* ViewContainer.m */; };
@@ -162,6 +163,8 @@
 		5553737A1AA4535600D9399B /* SharedInstance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharedInstance.h; sourceTree = "<group>"; };
 		5553737B1AA4535600D9399B /* SharedInstance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharedInstance.m; sourceTree = "<group>"; };
 		555373801AA4551D00D9399B /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		5565EA991ADFB75400058E15 /* SearchManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchManager.h; path = managers/SearchManager/SearchManager.h; sourceTree = "<group>"; };
+		5565EA9A1ADFB75400058E15 /* SearchManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchManager.m; path = managers/SearchManager/SearchManager.m; sourceTree = "<group>"; };
 		558392A31AB18B29002752EF /* ImageLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImageLoader.h; path = managers/ImageLoader/ImageLoader.h; sourceTree = "<group>"; };
 		558392A41AB18B29002752EF /* ImageLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImageLoader.m; path = managers/ImageLoader/ImageLoader.m; sourceTree = "<group>"; };
 		558392B91AB1E7B1002752EF /* MenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuView.h; path = MenuView/MenuView.h; sourceTree = "<group>"; };
@@ -550,6 +553,15 @@
 				5553737B1AA4535600D9399B /* SharedInstance.m */,
 			);
 			path = patterns;
+			sourceTree = "<group>";
+		};
+		5565EA981ADFB73300058E15 /* SearchManager */ = {
+			isa = PBXGroup;
+			children = (
+				5565EA991ADFB75400058E15 /* SearchManager.h */,
+				5565EA9A1ADFB75400058E15 /* SearchManager.m */,
+			);
+			name = SearchManager;
 			sourceTree = "<group>";
 		};
 		558392A21AB18B0B002752EF /* ImageLoader */ = {
@@ -1135,6 +1147,7 @@
 				558392DB1AB43324002752EF /* ConfigurationManager */,
 				558392A21AB18B0B002752EF /* ImageLoader */,
 				551B21981A6AA063005A34C7 /* RecipesManager */,
+				5565EA981ADFB73300058E15 /* SearchManager */,
 				55D7F3971A67EF59004E4EB0 /* ScreenManager */,
 				55AFB0D91A7D160800D9DDD6 /* ServiceManager */,
 			);
@@ -1296,6 +1309,7 @@
 				55D273431A989DDF00B4CCAA /* JSONHTTPClient.m in Sources */,
 				558392E51AB43A48002752EF /* RootView.m in Sources */,
 				55CED60C1A94EFD7000F8021 /* TableViewCell.m in Sources */,
+				5565EA9B1ADFB75400058E15 /* SearchManager.m in Sources */,
 				551B21731A6A7BF7005A34C7 /* RecipeScreen.m in Sources */,
 				55D692791ABD59CD00BC2932 /* RecipesCategory.m in Sources */,
 				559AAE1C1A8F557900FB46D3 /* QMKDeallocationGuard.m in Sources */,
@@ -1537,6 +1551,7 @@
 				55C397821AC04C3A00D47E92 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		55D7F35B1A67EE1E004E4EB0 /* Build configuration list for PBXProject "ChefsBuddy" */ = {
 			isa = XCConfigurationList;

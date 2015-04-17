@@ -14,6 +14,7 @@
 #import "RecipesManager.h"
 #import "RootScreen.h"
 #import "Screen.h"
+#import "SearchManager.h"
 #import "SearchScreen.h"
 #import "ServiceProvider.h"
 #import "UINavigationController+Extension.h"
@@ -77,21 +78,21 @@
 }
 
 - (void)gotoSearchScreen {
-    SearchScreen *searchScreen = [[SearchScreen alloc] initWithRecipesManager:[self.serviceProvider getServiceWithClass:[RecipesManager class]]
-                                                                screenManager:self];
+    SearchScreen *searchScreen = [[SearchScreen alloc] initWithSearchManager:[self.serviceProvider getServiceWithClass:[SearchManager class]]
+                                                               screenManager:self];
     [self.navigationController pushViewController:searchScreen animated:YES];
 }
 
 - (void)gotoSearchScreenWithSearchRequest:(SearchRequest *)searchRequest {
     SearchScreen *searchScreen = [[SearchScreen alloc] initWithSearchRequest:searchRequest
-                                                              recipesManager:[self.serviceProvider getServiceWithClass:[RecipesManager class]]
+                                                               searchManager:[self.serviceProvider getServiceWithClass:[SearchManager class]]
                                                                screenManager:self];
     [self.navigationController pushViewController:searchScreen animated:YES];
 }
 
 - (void)switchToSearchScreen {
-    SearchScreen *searchScreen = [[SearchScreen alloc] initWithRecipesManager:[self.serviceProvider getServiceWithClass:[RecipesManager class]]
-                                                                screenManager:self];
+    SearchScreen *searchScreen = [[SearchScreen alloc] initWithSearchManager:[self.serviceProvider getServiceWithClass:[SearchManager class]]
+                                                               screenManager:self];
     [self.navigationController replaceTopViewControllerWithViewController:searchScreen withCustomTransition:^CATransition *{
         CATransition *transition = [CATransition animation];
         [transition setType:kCATransitionFade];

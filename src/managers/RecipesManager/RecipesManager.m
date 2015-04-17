@@ -46,12 +46,6 @@ static NSString* const kRecipesCacheKey = @"recipes";
     return [NSArray arrayWithArray:self.recentRecipes];
 }
 
-- (void)searchRecipesWithRequest:(SearchRequest *)searchRequest
-                    successBlock:(void (^)(NSArray *searchResults))successBlock
-                    failureBlock:(void (^)(NSError *error))failureBlock {
-    [self.serviceManager searchRecipesWithRequest:searchRequest successBlock:successBlock failureBlock:failureBlock];
-}
-
 - (void)getRecipeWithIdentifier:(NSString *)identifier
                    successBlock:(void (^)(Recipe *recipe))successBlock
                    failureBlock:(void (^)(NSError *error))failureBlock {
