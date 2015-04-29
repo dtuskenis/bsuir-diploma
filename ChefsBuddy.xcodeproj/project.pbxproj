@@ -104,7 +104,7 @@
 		55D273441A989DDF00B4CCAA /* JSONModel+networking.m in Sources */ = {isa = PBXBuildFile; fileRef = 55D273371A989DDF00B4CCAA /* JSONModel+networking.m */; };
 		55D273451A989DDF00B4CCAA /* JSONKeyMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 55D2733A1A989DDF00B4CCAA /* JSONKeyMapper.m */; };
 		55D273461A989DDF00B4CCAA /* JSONValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 55D2733C1A989DDF00B4CCAA /* JSONValueTransformer.m */; };
-		55D2737F1A98B62500B4CCAA /* APIDataConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 55D273661A98B62500B4CCAA /* APIDataConverter.m */; };
+		55D2737F1A98B62500B4CCAA /* DataConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 55D273661A98B62500B4CCAA /* DataConverter.m */; };
 		55D273801A98B62500B4CCAA /* APIIngredient.m in Sources */ = {isa = PBXBuildFile; fileRef = 55D273691A98B62500B4CCAA /* APIIngredient.m */; };
 		55D273811A98B62500B4CCAA /* APIIngredientInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 55D2736B1A98B62500B4CCAA /* APIIngredientInformation.m */; };
 		55D273821A98B62500B4CCAA /* APIRecipe.m in Sources */ = {isa = PBXBuildFile; fileRef = 55D2736E1A98B62500B4CCAA /* APIRecipe.m */; };
@@ -335,8 +335,8 @@
 		55D2733A1A989DDF00B4CCAA /* JSONKeyMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKeyMapper.m; sourceTree = "<group>"; };
 		55D2733B1A989DDF00B4CCAA /* JSONValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONValueTransformer.h; sourceTree = "<group>"; };
 		55D2733C1A989DDF00B4CCAA /* JSONValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONValueTransformer.m; sourceTree = "<group>"; };
-		55D273651A98B62500B4CCAA /* APIDataConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIDataConverter.h; sourceTree = "<group>"; };
-		55D273661A98B62500B4CCAA /* APIDataConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIDataConverter.m; sourceTree = "<group>"; };
+		55D273651A98B62500B4CCAA /* DataConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataConverter.h; sourceTree = "<group>"; };
+		55D273661A98B62500B4CCAA /* DataConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataConverter.m; sourceTree = "<group>"; };
 		55D273681A98B62500B4CCAA /* APIIngredient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIIngredient.h; sourceTree = "<group>"; };
 		55D273691A98B62500B4CCAA /* APIIngredient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIIngredient.m; sourceTree = "<group>"; };
 		55D2736A1A98B62500B4CCAA /* APIIngredientInformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIIngredientInformation.h; sourceTree = "<group>"; };
@@ -996,8 +996,8 @@
 		55D273641A98B62500B4CCAA /* converters */ = {
 			isa = PBXGroup;
 			children = (
-				55D273651A98B62500B4CCAA /* APIDataConverter.h */,
-				55D273661A98B62500B4CCAA /* APIDataConverter.m */,
+				55D273651A98B62500B4CCAA /* DataConverter.h */,
+				55D273661A98B62500B4CCAA /* DataConverter.m */,
 			);
 			name = converters;
 			path = data/converters;
@@ -1371,7 +1371,7 @@
 				55B84CE11AADBC7800B82C02 /* UINavigationController+Extension.m in Sources */,
 				559AADD41A8F53EC00FB46D3 /* QMKExecution.m in Sources */,
 				55B84CD31AA9B0E500B82C02 /* MASCompositeConstraint.m in Sources */,
-				55D2737F1A98B62500B4CCAA /* APIDataConverter.m in Sources */,
+				55D2737F1A98B62500B4CCAA /* DataConverter.m in Sources */,
 				559AAE0A1A8F53EC00FB46D3 /* QMKWeakSetEntry.m in Sources */,
 				55D2733F1A989DDF00B4CCAA /* JSONModelClassProperty.m in Sources */,
 				55D273861A98B62500B4CCAA /* Ingredient.m in Sources */,
