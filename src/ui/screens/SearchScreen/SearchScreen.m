@@ -56,10 +56,13 @@
         [self.view layoutIfNeeded];
         
         [[IndicatorController sharedInstance] showIndicatorWithTitle:@"Searching..."];
+        [self.view beginRefreshing];
         [self.searchManager searchRecipesWithRequest:self.searchRequest successBlock:^(NSArray *searchResults) {
             self.view.searchResults = searchResults;
+            [self.view endRefreshing];
             [[IndicatorController sharedInstance] hideIndicator];
         } failureBlock:^(NSError *error) {
+            [self.view endRefreshing];
             [[IndicatorController sharedInstance] hideIndicator];
         }];
     }

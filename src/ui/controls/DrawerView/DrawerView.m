@@ -50,14 +50,6 @@
     
     self.leftView.frame = CGRectMake(-self.leftSideWidth, 0, self.leftSideWidth, self.bounds.size.height);
     [self addSubview:self.leftView];
-    /*
-    [self.leftView mas_makeConstraints:^(MASConstraintMaker *make) {
-        [make.width setOffset:self.leftSideWidth];
-        make.top.equalTo(self);
-        make.bottom.equalTo(self);
-        [make.leading.equalTo(self) setOffset:-self.leftSideWidth];
-    }];
-    */
 }
 
 - (void)showLeftSideAnimated:(BOOL)animated {

@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6254"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RootScreen">
             <connections>
+                <outlet property="drawerView" destination="giX-yB-aL7" id="Jb8-nN-N5d"/>
                 <outlet property="menuViewContainer" destination="0AU-Gr-OjX" id="QV6-Jx-Swd"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="QRL-6f-zVQ"/>
             </connections>
@@ -21,7 +22,7 @@
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <connections>
                         <outlet property="centerView" destination="FHk-ZC-5VE" id="TQQ-mT-gQu"/>
-                        <outlet property="leftView" destination="0AU-Gr-OjX" id="ffI-Vl-mTw"/>
+                        <outlet property="leftView" destination="m1q-mA-qbQ" id="E4j-SJ-oQW"/>
                     </connections>
                 </view>
             </subviews>
@@ -39,6 +40,56 @@
             </connections>
             <point key="canvasLocation" x="108" y="-399"/>
         </view>
+        <view contentMode="scaleToFill" id="m1q-mA-qbQ" userLabel="Left View">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rgq-hQ-0XK">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="app_icon_44" translatesAutoresizingMaskIntoConstraints="NO" id="iU8-oV-HgJ">
+                            <rect key="frame" x="8" y="10" width="44" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="v2e-xH-pkS"/>
+                                <constraint firstAttribute="width" constant="44" id="zLK-ub-IpE"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chef's Buddy" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tM0-ag-ayF">
+                            <rect key="frame" x="64" y="10" width="248" height="44"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="tM0-ag-ayF" firstAttribute="top" secondItem="iU8-oV-HgJ" secondAttribute="top" id="1hg-Pu-0EQ"/>
+                        <constraint firstItem="iU8-oV-HgJ" firstAttribute="leading" secondItem="rgq-hQ-0XK" secondAttribute="leading" constant="8" id="A2j-VD-RQc"/>
+                        <constraint firstAttribute="centerY" secondItem="iU8-oV-HgJ" secondAttribute="centerY" id="B09-dj-yY6"/>
+                        <constraint firstAttribute="trailing" secondItem="tM0-ag-ayF" secondAttribute="trailing" constant="8" id="DfC-7r-k5m"/>
+                        <constraint firstAttribute="height" constant="64" id="GZp-Gt-ttD"/>
+                        <constraint firstItem="tM0-ag-ayF" firstAttribute="leading" secondItem="iU8-oV-HgJ" secondAttribute="trailing" constant="12" id="LrS-iQ-OY3"/>
+                        <constraint firstItem="tM0-ag-ayF" firstAttribute="bottom" secondItem="iU8-oV-HgJ" secondAttribute="bottom" id="ObN-HP-aGe"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0AU-Gr-OjX" customClass="MenuViewContainer">
+                    <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="rgq-hQ-0XK" firstAttribute="leading" secondItem="m1q-mA-qbQ" secondAttribute="leading" id="3kI-Eg-Bny"/>
+                <constraint firstItem="0AU-Gr-OjX" firstAttribute="leading" secondItem="m1q-mA-qbQ" secondAttribute="leading" id="4Du-7K-5Sf"/>
+                <constraint firstItem="0AU-Gr-OjX" firstAttribute="top" secondItem="rgq-hQ-0XK" secondAttribute="bottom" id="9zv-Nw-YX1"/>
+                <constraint firstItem="rgq-hQ-0XK" firstAttribute="top" secondItem="m1q-mA-qbQ" secondAttribute="top" id="PZu-7D-Kh5"/>
+                <constraint firstAttribute="trailing" secondItem="rgq-hQ-0XK" secondAttribute="trailing" id="T8r-mT-JSK"/>
+                <constraint firstAttribute="bottom" secondItem="0AU-Gr-OjX" secondAttribute="bottom" id="Uzj-Hm-zxZ"/>
+                <constraint firstAttribute="trailing" secondItem="0AU-Gr-OjX" secondAttribute="trailing" id="bx9-rI-gam"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+            <point key="canvasLocation" x="490" y="138"/>
+        </view>
         <view contentMode="scaleToFill" id="FHk-ZC-5VE" userLabel="Center View">
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -46,12 +97,8 @@
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
             <point key="canvasLocation" x="108" y="222"/>
         </view>
-        <view contentMode="scaleToFill" id="0AU-Gr-OjX" customClass="MenuViewContainer">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-            <point key="canvasLocation" x="500" y="-264"/>
-        </view>
     </objects>
+    <resources>
+        <image name="app_icon_44" width="44" height="44"/>
+    </resources>
 </document>

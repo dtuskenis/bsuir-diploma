@@ -8,10 +8,12 @@
 
 #import "RootScreen.h"
 
+#import "DrawerView.h"
 #import "MenuViewContainer.h"
 #import "RecipesListViewController.h"
 #import "RecipesManager.h"
 #import "UIBarButtonItem+Custom.h"
+#import "UIColor+Custom.h"
 
 static NSString* const kRecentRecipes = @"Recent";
 static NSString* const kFavorites = @"Favorites";
@@ -19,6 +21,7 @@ static NSString* const kCategories = @"Categories";
 
 @interface RootScreen () <RecipesListViewControllerDelegate>
 
+@property (nonatomic, weak) IBOutlet DrawerView *drawerView;
 @property (nonatomic, weak) IBOutlet MenuViewContainer *menuViewContainer;
 
 @property (nonatomic, strong) RecipesListViewController *recentRecipesListViewController;
@@ -47,6 +50,8 @@ static NSString* const kCategories = @"Categories";
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem searchItemWithTarget:self action:@selector(searchButtonTouched:)];
     
     [self configureMenu];
+    
+    self.drawerView.leftView.backgroundColor = [UIColor applicationBackgroundColor];
     
     self.recentRecipesListViewController = [[RecipesListViewController alloc] initWithRecipes:self.recipesManager.recent];
     self.recentRecipesListViewController.delegate = self;

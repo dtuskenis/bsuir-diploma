@@ -31,7 +31,7 @@ static NSString* const kContentSizeKey = @"contentSize";
     self.items = [NSMutableArray array];
     [self.tableView registerNib:[MenuViewCell cellNib] forCellReuseIdentifier:[MenuViewCell cellIdentifier]];
     [self.tableView addObserver:self forKeyPath:kContentSizeKey options:NSKeyValueObservingOptionNew context:NULL];
-    [self.tableView setBackgroundColor:[[UIColor applicationDefaultColor] colorWithAlphaComponent:0.1]];
+    [self.tableView setBackgroundColor:[UIColor clearColor]];
 }
 
 - (void)dealloc {

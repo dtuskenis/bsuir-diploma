@@ -16,6 +16,7 @@
 
 @property (nonatomic, weak) IBOutlet UITableView *tableView;
 @property (nonatomic, weak) IBOutlet UISearchBar *searchBar;
+@property (nonatomic, weak) IBOutlet UIView *placeholderView;
 
 @property (nonatomic, weak) IBOutlet NSLayoutConstraint *tableViewBottomSpace;
 @property (nonatomic, weak) IBOutlet NSLayoutConstraint *searchBarHeight;
@@ -28,7 +29,7 @@
     [super awakeFromNib];
     
     [self.tableView registerNib:[SearchResultCell cellNib] forCellReuseIdentifier:[SearchResultCell cellIdentifier]];
-    [self.searchBar setBackgroundImage:[UIImage imageWithSize:self.searchBar.bounds.size color:[UIColor applicationDefaultColor]]];
+    [self.searchBar setBackgroundImage:[UIImage imageWithSize:self.searchBar.bounds.size color:[UIColor clearColor]]];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
@@ -61,7 +62,7 @@
 }
 
 - (void)endRefreshing {
-    
+    self.placeholderView.hidden = (self.searchResults.count > 0);
 }
 
 #pragma mark -

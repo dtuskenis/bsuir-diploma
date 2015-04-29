@@ -17,6 +17,7 @@
 #import "SearchManager.h"
 #import "SearchScreen.h"
 #import "ServiceProvider.h"
+#import "UIColor+Custom.h"
 #import "UINavigationController+Extension.h"
 
 @interface ScreenManager () <UINavigationControllerDelegate>
@@ -51,6 +52,11 @@
     if (_navigationController == nil) {
         _navigationController = [[UINavigationController alloc] initWithRootViewController:self.rootScreen];
         _navigationController.delegate = self;
+        
+        UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"background_gradient"]];
+        imageView.frame = _navigationController.view.bounds;
+        [_navigationController.view insertSubview:imageView atIndex:0];
+        [_navigationController.view setBackgroundColor:[UIColor applicationBackgroundColor]];
     }
     return _navigationController;
 }

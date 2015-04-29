@@ -53,7 +53,7 @@
     
     // Global appearance
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
-    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageWithSize:CGSizeMake(320, 64) color:[UIColor applicationDefaultColor]] forBarMetrics:UIBarMetricsDefault];
+    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageWithSize:CGSizeMake(320, 64) color:[UIColor clearColor]] forBarMetrics:UIBarMetricsDefault];
     [[UINavigationBar appearance] setShadowImage:[UIImage new]];
     [[UINavigationBar appearance] setTintColor:[UIColor applicationTintColor]];
     [[UINavigationBar appearance] setTitleTextAttributes:@{

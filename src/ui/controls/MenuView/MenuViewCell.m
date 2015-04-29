@@ -26,7 +26,7 @@
     [self.button setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
     
     self.selectedBackgroundView = [[UIView alloc] initWithFrame:self.bounds];
-    self.selectedBackgroundView.backgroundColor = [[UIColor applicationDefaultColor] colorWithAlphaComponent:0.3];
+    self.selectedBackgroundView.backgroundColor = [[UIColor applicationDefaultColor] colorWithAlphaComponent:1];
 }
 
 - (void)setItem:(MenuViewItem *)item {

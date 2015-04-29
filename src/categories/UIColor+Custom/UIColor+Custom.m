@@ -12,22 +12,13 @@
 
 + (instancetype)applicationDefaultColor {
     return [UIColor colorWithRed:0.420 green:0.522 blue:0.784 alpha:1.000];
-    /*
-    return [UIColor colorWithRed:193.0 / 255
-                           green:69.0 / 255
-                            blue:63.0 / 255
-                           alpha:1.0];
-     */
 }
 
 + (instancetype)applicationBackgroundColor {
-    return [UIColor colorWithRed:0.804 green:0.843 blue:0.941 alpha:1.000];
-    /*
-    return [UIColor colorWithRed:244.0 / 255
-                           green:241.0 / 255
-                            blue:215.0 / 255
-                           alpha:1.0];
-     */
+    return [UIColor colorWithRed:(float)205 / 255
+                           green:(float)215 / 255
+                            blue:(float)240 / 255
+                           alpha:1.000];
 }
 
 + (instancetype)applicationTintColor {
