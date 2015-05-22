@@ -57,15 +57,15 @@ static NSTimeInterval const kAnimationDuration = 0.3;
     /*
      Title / Category / Subcategory
      */
-    self.titleLabel.attributedText = [self attributedStringWithTitle:@"" description:recipe.title];
+    self.titleLabel.text = recipe.title;
     [self.titleLabel sizeToFit];
     self.titleLabelHeight.constant = self.titleLabel.frame.size.height;
     
-    self.categoryLabel.attributedText = [self attributedStringWithTitle:@"" description:recipe.category];
+    self.categoryLabel.text = recipe.category;
     [self.categoryLabel sizeToFit];
     self.categoryLabelHeight.constant = self.categoryLabel.frame.size.height;
     
-    self.subcategoryLabel.attributedText = [self attributedStringWithTitle:@"" description:recipe.subcategory];
+    self.subcategoryLabel.text = recipe.subcategory;
     [self.subcategoryLabel sizeToFit];
     self.subcategoryLabelHeight.constant = self.subcategoryLabel.frame.size.height;
     
@@ -148,18 +148,6 @@ static NSTimeInterval const kAnimationDuration = 0.3;
     cell.item = self.recipe.ingredients[indexPath.row];
     
     return cell;
-}
-
-#pragma mark -
-#pragma mark Helpers
-
-- (NSAttributedString *)attributedStringWithTitle:(NSString *)title description:(NSString *)description {
-    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:title];
-    
-    [attributedString appendAttributedString:[[NSAttributedString alloc] initWithString:@" "]];
-    [attributedString appendAttributedString:[[NSAttributedString alloc] initWithString:description ? description : @""]];
-    
-    return [[NSAttributedString alloc] initWithAttributedString:attributedString];
 }
 
 @end
