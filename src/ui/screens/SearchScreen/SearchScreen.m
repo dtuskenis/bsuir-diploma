@@ -13,6 +13,8 @@
 #import "SearchRequest.h"
 #import "UIBarButtonItem+Custom.h"
 
+static NSInteger const kSearchResultsPageSize = 30;
+
 @interface SearchScreen () <SearchViewDelegate, UISearchBarDelegate>
 
 @property (nonatomic, strong) SearchManager *searchManager;
@@ -51,7 +53,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    if (self.searchRequest) {
+    if (self.searchRequest && self.view.searchResults.count == 0) {
         self.view.searchBar.hidden = YES;
         [self.view layoutIfNeeded];
         
@@ -79,18 +81,14 @@
 #pragma mark UISearchBarDelegate
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
-    SearchRequest *searchRequest = [[SearchRequest alloc] init];
-    searchRequest.keywords = [searchText componentsSeparatedByString:@" "];
-    searchRequest.ingredients = @[];
-    searchRequest.searchRange = NSMakeRange(0, 30);
+    if (self.searchRequest == nil) {
+        self.searchRequest = [[SearchRequest alloc] init];
+        self.searchRequest.ingredients = @[];
+    }
+    self.searchRequest.keywords = [searchText componentsSeparatedByString:@" "];
+    self.searchRequest.searchRange = NSMakeRange(0, kSearchResultsPageSize);
     
-    [self.view beginRefreshing];
-    [self.searchManager searchRecipesWithRequest:searchRequest successBlock:^(NSArray *searchResults) {
-        self.view.searchResults = searchResults;
-        [self.view endRefreshing];
-    } failureBlock:^(NSError *error) {
-        [self.view endRefreshing];
-    }];
+    [self search];
 }
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
@@ -98,10 +96,33 @@
 }
 
 #pragma mark -
+#pragma mark Private
+
+- (void)search {
+    [self.view beginRefreshing];
+    [self.searchManager searchRecipesWithRequest:self.searchRequest successBlock:^(NSArray *searchResults) {
+        self.view.searchResults = [self.view.searchResults arrayByAddingObjectsFromArray:searchResults];
+        [self.view endRefreshing];
+    } failureBlock:^(NSError *error) {
+        [self.view endRefreshing];
+    }];
+}
+
+- (void)increaseSearchRange {
+    NSRange currentRange = self.searchRequest.searchRange;
+    self.searchRequest.searchRange = NSMakeRange(currentRange.location + kSearchResultsPageSize, kSearchResultsPageSize);
+}
+
+#pragma mark -
 #pragma mark SearchViewDelegate
 
 - (void)searchView:(SearchView *)view didSelectRecipe:(Recipe *)recipe {
     [self.screenManager gotoRecipeScreenWithRecipe:recipe];
+}
+
+- (void)searchViewNeedMoreData:(SearchView *)view {
+    [self increaseSearchRange];
+    [self search];
 }
 
 @end

@@ -21,6 +21,8 @@
 @property (nonatomic, weak) IBOutlet NSLayoutConstraint *tableViewBottomSpace;
 @property (nonatomic, weak) IBOutlet NSLayoutConstraint *searchBarHeight;
 
+@property (nonatomic, assign) BOOL updateRequired;
+
 @end
 
 @implementation SearchView
@@ -49,9 +51,17 @@
 
 @synthesize searchResults = _searchResults;
 
+- (NSArray *)searchResults {
+    if (_searchResults == nil) {
+        _searchResults = @[];
+    }
+    return _searchResults;
+}
+
 - (void)setSearchResults:(NSArray *)searchResults {
     _searchResults = searchResults;
     [self.tableView reloadData];
+    self.updateRequired = NO;
 }
 
 #pragma mark -
@@ -85,6 +95,16 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     if ([self.delegate respondsToSelector:@selector(searchView:didSelectRecipe:)]) {
         [self.delegate searchView:self didSelectRecipe:self.searchResults[indexPath.row]];
+    }
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    BOOL needUpdate = ((scrollView.contentOffset.y + scrollView.bounds.size.height) / scrollView.contentSize.height) > 0.9;
+    if (self.updateRequired == NO && needUpdate) {
+        self.updateRequired = YES;
+        if ([self.delegate respondsToSelector:@selector(searchViewNeedMoreData:)]) {
+            [self.delegate searchViewNeedMoreData:self];
+        }
     }
 }
 

@@ -29,5 +29,6 @@
 
 @optional
 - (void)searchView:(SearchView *)view didSelectRecipe:(Recipe *)recipe;
+- (void)searchViewNeedMoreData:(SearchView *)view;
 
 @end
