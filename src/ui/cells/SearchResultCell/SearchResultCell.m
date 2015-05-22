@@ -26,7 +26,7 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     
-    self.backgroundColor = [UIColor applicationBackgroundColor];
+    self.backgroundColor = [[UIColor applicationBackgroundColor] colorWithAlphaComponent:0.1];
     self.selectedBackgroundView = [[UIView alloc] initWithFrame:self.bounds];
     self.selectedBackgroundView.backgroundColor = [[UIColor applicationDefaultColor] colorWithAlphaComponent:0.1];
 }
