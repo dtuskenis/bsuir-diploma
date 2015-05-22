@@ -11,6 +11,7 @@
 #import "APIModel.h"
 #import "Ingredient.h"
 #import "Recipe.h"
+#import "RecipesCategory.h"
 #import "SearchRequest.h"
 
 static NSString* const kImagePlaceholderURL = @"http://redirect.bigoven.com/pics/recipe-no-image.jpg";
@@ -66,8 +67,16 @@ static NSString* const kImagePlaceholderURL = @"http://redirect.bigoven.com/pics
 
 - (APISearchRequest *)convertSearchRequest:(SearchRequest *)request {
     APISearchRequest *searchRequest = [[APISearchRequest alloc] init];
-    searchRequest.title_kw = [request.keywords componentsJoinedByString:@" "];
-    searchRequest.include_primarycat = request.categories;
+    if (request.keywords.count > 0) {
+        searchRequest.title_kw = [request.keywords componentsJoinedByString:@" "];
+    }
+    if (request.categories.count > 0) {
+        NSMutableArray *categories = [NSMutableArray array];
+        for (RecipesCategory *category in request.categories) {
+            [categories addObject:category.identifier];
+        }
+        searchRequest.include_primarycat = [categories componentsJoinedByString:@","];
+    }
     searchRequest.pg = 1 + (int)((request.searchRange.location + request.searchRange.length) / 50);
     searchRequest.rpp = ((request.searchRange.location + request.searchRange.length) - (searchRequest.pg - 1) * 50);
     return searchRequest;

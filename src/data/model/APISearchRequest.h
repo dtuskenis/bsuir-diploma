@@ -10,13 +10,13 @@
 
 @interface APISearchRequest : JSONModel
 
-@property (nonatomic, strong) NSString *api_key;
-@property (nonatomic, strong) NSString *title_kw;
+@property (nonatomic, strong) NSString<Optional> *api_key;
+@property (nonatomic, strong) NSString<Optional> *title_kw;
 @property (nonatomic, strong) NSString<Optional> *any_kw;
-@property (nonatomic, strong) NSArray<Optional> *include_primarycat;
-@property (nonatomic, strong) NSArray<Optional> *cuisine;
-@property (nonatomic, strong) NSArray<Optional> *include_ing;
-@property (nonatomic, strong) NSArray<Optional> *exclude_ing;
+@property (nonatomic, strong) NSString<Optional> *include_primarycat;
+@property (nonatomic, strong) NSString<Optional> *cuisine;
+@property (nonatomic, strong) NSString<Optional> *include_ing;
+@property (nonatomic, strong) NSString<Optional> *exclude_ing;
 @property (nonatomic, assign) NSUInteger pg;
 @property (nonatomic, assign) NSUInteger rpp;
 
