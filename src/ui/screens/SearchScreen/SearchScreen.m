@@ -9,6 +9,7 @@
 #import "SearchScreen.h"
 
 #import "IndicatorController.h"
+#import "RecipesCategory.h"
 #import "SearchManager.h"
 #import "SearchRequest.h"
 #import "UIBarButtonItem+Custom.h"
@@ -43,7 +44,11 @@ static NSInteger const kSearchResultsPageSize = 30;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.navigationItem.title = NSLocalizedString(@"Search", nil);
+    if (self.searchRequest.categories.count > 0) {
+        self.navigationItem.title = [(RecipesCategory *)self.searchRequest.categories.firstObject name];
+    } else {
+        self.navigationItem.title = NSLocalizedString(@"Search", nil);
+    }
     
     if (self.searchRequest == nil) {
         self.navigationItem.rightBarButtonItem = [UIBarButtonItem arrowsItemWithTarget:self action:@selector(arrowsButtonTouched:)];
