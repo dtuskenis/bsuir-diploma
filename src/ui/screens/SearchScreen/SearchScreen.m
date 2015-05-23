@@ -16,7 +16,7 @@
 
 static NSInteger const kSearchResultsPageSize = 30;
 
-@interface SearchScreen () <SearchViewDelegate, UISearchBarDelegate>
+@interface SearchScreen () <SearchViewDelegate>
 
 @property (nonatomic, strong) SearchManager *searchManager;
 @property (nonatomic, strong) SearchRequest *searchRequest;
@@ -64,8 +64,7 @@ static NSInteger const kSearchResultsPageSize = 30;
     [super viewWillAppear:animated];
     
     if (self.searchRequest && self.view.searchResults.count == 0) {
-        self.view.searchBar.hidden = YES;
-        [self.view layoutIfNeeded];
+        [self.view hideSearchBar];
         
         [[IndicatorController sharedInstance] showIndicatorWithTitle:@"Searching..."];
         [self.view beginRefreshing];
@@ -89,24 +88,6 @@ static NSInteger const kSearchResultsPageSize = 30;
 }
 
 #pragma mark -
-#pragma mark UISearchBarDelegate
-
-- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
-    if (self.searchRequest == nil) {
-        self.searchRequest = [[SearchRequest alloc] init];
-        self.searchRequest.ingredients = @[];
-    }
-    self.searchRequest.keywords = [searchText componentsSeparatedByString:@" "];
-    self.searchRequest.searchRange = NSMakeRange(0, kSearchResultsPageSize);
-    
-    [self search];
-}
-
-- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
-    [searchBar resignFirstResponder];
-}
-
-#pragma mark -
 #pragma mark Private
 
 - (void)search {
@@ -127,6 +108,17 @@ static NSInteger const kSearchResultsPageSize = 30;
 
 #pragma mark -
 #pragma mark SearchViewDelegate
+
+- (void)searchView:(SearchView *)view didChangeSearchText:(NSString *)searchText {
+    if (self.searchRequest == nil) {
+        self.searchRequest = [[SearchRequest alloc] init];
+        self.searchRequest.ingredients = @[];
+    }
+    self.searchRequest.keywords = [searchText componentsSeparatedByString:@" "];
+    self.searchRequest.searchRange = NSMakeRange(0, kSearchResultsPageSize);
+    
+    [self search];
+}
 
 - (void)searchView:(SearchView *)view didSelectRecipe:(Recipe *)recipe {
     [self.screenManager gotoRecipeScreenWithRecipe:recipe];

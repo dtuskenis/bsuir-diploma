@@ -16,13 +16,12 @@
 
 @property (nonatomic, weak) IBOutlet id<SearchViewDelegate> delegate;
 
-@property (nonatomic, weak, readonly) UISearchBar *searchBar;
-
 @property (nonatomic, strong) NSArray *searchResults;
 
 - (void)beginRefreshing;
 - (void)endRefreshing;
 
+- (void)hideSearchBar;
 - (void)hideKeyboard;
 
 @end
@@ -30,6 +29,7 @@
 @protocol SearchViewDelegate <NSObject>
 
 @optional
+- (void)searchView:(SearchView *)view didChangeSearchText:(NSString *)searchText;
 - (void)searchView:(SearchView *)view didSelectRecipe:(Recipe *)recipe;
 - (void)searchViewNeedMoreData:(SearchView *)view;
 

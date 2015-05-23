@@ -16,16 +16,16 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rbj-Nx-bm5" userLabel="Placeholder View">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <rect key="frame" x="0.0" y="44" width="320" height="524"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No recipes found." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1pQ-3t-AxT" userLabel="Placeholder Label">
-                            <rect key="frame" x="30" y="269" width="260" height="30"/>
+                            <rect key="frame" x="30" y="247" width="260" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="30" id="Atw-Fy-Q36"/>
                                 <constraint firstAttribute="width" constant="260" id="eYh-ri-Qby"/>
                             </constraints>
                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
@@ -50,20 +50,20 @@
                     </constraints>
                     <textInputTraits key="textInputTraits"/>
                     <connections>
-                        <outlet property="delegate" destination="-1" id="WfS-Y5-nXE"/>
+                        <outlet property="delegate" destination="i5M-Pr-FkT" id="5V3-hz-a0h"/>
                     </connections>
                 </searchBar>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="rbj-Nx-bm5" secondAttribute="trailing" id="3cA-1J-zbn"/>
-                <constraint firstAttribute="bottom" secondItem="rbj-Nx-bm5" secondAttribute="bottom" id="DHq-8O-5pn"/>
                 <constraint firstAttribute="bottom" secondItem="2Vj-qA-kOY" secondAttribute="bottom" id="G9S-1H-THV"/>
                 <constraint firstItem="rbj-Nx-bm5" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="GlN-mk-Ggu"/>
                 <constraint firstItem="2Vj-qA-kOY" firstAttribute="top" secondItem="bBe-0V-iA2" secondAttribute="bottom" id="Hnv-5D-6fP"/>
+                <constraint firstItem="rbj-Nx-bm5" firstAttribute="top" secondItem="bBe-0V-iA2" secondAttribute="bottom" id="OdT-Po-36g"/>
                 <constraint firstAttribute="trailing" secondItem="2Vj-qA-kOY" secondAttribute="trailing" id="TRi-vz-MJz"/>
-                <constraint firstItem="rbj-Nx-bm5" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="UJf-me-bkn"/>
                 <constraint firstItem="bBe-0V-iA2" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="fho-JQ-Chp"/>
+                <constraint firstItem="2Vj-qA-kOY" firstAttribute="bottom" secondItem="rbj-Nx-bm5" secondAttribute="bottom" id="fpI-lo-Eck"/>
                 <constraint firstAttribute="trailing" secondItem="bBe-0V-iA2" secondAttribute="trailing" id="hsr-jj-tou"/>
                 <constraint firstItem="bBe-0V-iA2" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="mpk-Dd-0yE"/>
                 <constraint firstItem="2Vj-qA-kOY" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="qUf-Cx-Qid"/>

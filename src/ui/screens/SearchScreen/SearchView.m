@@ -12,7 +12,7 @@
 #import "UIColor+Custom.h"
 #import "UIImage+Solid.h"
 
-@interface SearchView () <UITableViewDataSource, UITableViewDelegate>
+@interface SearchView () <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate>
 
 @property (nonatomic, weak) IBOutlet UITableView *tableView;
 @property (nonatomic, weak) IBOutlet UISearchBar *searchBar;
@@ -75,6 +75,11 @@
     self.placeholderView.hidden = (self.searchResults.count > 0);
 }
 
+- (void)hideSearchBar {
+    self.searchBar.hidden = YES;
+    [self layoutIfNeeded];
+}
+
 - (void)hideKeyboard {
     [self.searchBar resignFirstResponder];
 }
@@ -110,6 +115,23 @@
             [self.delegate searchViewNeedMoreData:self];
         }
     }
+}
+
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
+    [self hideKeyboard];
+}
+
+#pragma mark -
+#pragma mark UISearchBarDelegate
+
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
+    if ([self.delegate respondsToSelector:@selector(searchView:didChangeSearchText:)]) {
+        [self.delegate searchView:self didChangeSearchText:searchText];
+    }
+}
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    [searchBar resignFirstResponder];
 }
 
 #pragma mark -
