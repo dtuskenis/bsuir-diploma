@@ -72,7 +72,16 @@
 }
 
 - (void)endRefreshing {
-    self.placeholderView.hidden = (self.searchResults.count > 0);
+    if (self.searchResults.count > 0) {
+        self.placeholderView.hidden = YES;
+        if (self.searchResults.count < 20) {
+            if ([self.delegate respondsToSelector:@selector(searchViewNeedMoreData:)]) {
+                [self.delegate searchViewNeedMoreData:self];
+            }
+        }
+    } else {
+        self.placeholderView.hidden = NO;
+    }
 }
 
 - (void)hideSearchBar {
