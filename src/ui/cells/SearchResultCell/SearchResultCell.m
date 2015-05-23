@@ -35,6 +35,7 @@
     [super prepareForReuse];
     [self.thumbnailImageView hnk_cancelSetImage];
     self.thumbnailImageView.image = nil;
+    [self.activityIndicator startAnimating];
 }
 
 - (void)setItem:(Recipe *)item {
