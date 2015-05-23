@@ -67,15 +67,11 @@ static NSInteger const kSearchResultsPageSize = 30;
         [self.view hideSearchBar];
         
         [[IndicatorController sharedInstance] showIndicatorWithTitle:@"Searching..."];
-        [self.view beginRefreshing];
-        [self.searchManager searchRecipesWithRequest:self.searchRequest successBlock:^(NSArray *searchResults) {
+        [self searchWithSuccessBlock:^(NSArray *searchResults) {
+            [[IndicatorController sharedInstance] hideIndicator];
             self.view.searchResults = searchResults;
-            [self.view endRefreshing];
-            [[IndicatorController sharedInstance] hideIndicator];
         } failureBlock:^(NSError *error) {
-            [self.view endRefreshing];
             [[IndicatorController sharedInstance] hideIndicator];
-            [self handleError:error];
         }];
     }
 }
@@ -90,12 +86,14 @@ static NSInteger const kSearchResultsPageSize = 30;
 #pragma mark -
 #pragma mark Private
 
-- (void)search {
+- (void)searchWithSuccessBlock:(void (^)(NSArray *searchResults))successBlock
+                  failureBlock:(void (^)(NSError *error))failureBlock {
     [self.view beginRefreshing];
     [self.searchManager searchRecipesWithRequest:self.searchRequest successBlock:^(NSArray *searchResults) {
-        self.view.searchResults = [self.view.searchResults arrayByAddingObjectsFromArray:searchResults];
+        successBlock(searchResults);
         [self.view endRefreshing];
     } failureBlock:^(NSError *error) {
+        failureBlock(error);
         [self.view endRefreshing];
         [self handleError:error];
     }];
@@ -117,7 +115,9 @@ static NSInteger const kSearchResultsPageSize = 30;
     self.searchRequest.keywords = [searchText componentsSeparatedByString:@" "];
     self.searchRequest.searchRange = NSMakeRange(0, kSearchResultsPageSize);
     
-    [self search];
+    [self searchWithSuccessBlock:^(NSArray *searchResults) {
+        self.view.searchResults = searchResults;
+    } failureBlock:^(NSError *error) {}];
 }
 
 - (void)searchView:(SearchView *)view didSelectRecipe:(Recipe *)recipe {
@@ -126,7 +126,9 @@ static NSInteger const kSearchResultsPageSize = 30;
 
 - (void)searchViewNeedMoreData:(SearchView *)view {
     [self increaseSearchRange];
-    [self search];
+    [self searchWithSuccessBlock:^(NSArray *searchResults) {
+        self.view.searchResults = [self.view.searchResults arrayByAddingObjectsFromArray:searchResults];
+    } failureBlock:^(NSError *error) {}];
 }
 
 @end
