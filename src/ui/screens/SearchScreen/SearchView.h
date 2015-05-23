@@ -23,6 +23,8 @@
 - (void)beginRefreshing;
 - (void)endRefreshing;
 
+- (void)hideKeyboard;
+
 @end
 
 @protocol SearchViewDelegate <NSObject>

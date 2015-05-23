@@ -52,7 +52,9 @@
     [self.recipesManager getRecipeWithIdentifier:self.recipe.identifier successBlock:^(Recipe *recipe) {
         self.view.recipe = recipe;
         [self.recipesManager setRecipeRecentlyViewed:self.recipe];
-    } failureBlock:^(NSError *error) {}];
+    } failureBlock:^(NSError *error) {
+        [self handleError:error];
+    }];
 }
 
 - (IBAction)favoriteButtonTouched:(FavoriteButton *)sender {

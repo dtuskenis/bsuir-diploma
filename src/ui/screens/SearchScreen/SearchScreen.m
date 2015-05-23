@@ -41,6 +41,11 @@ static NSInteger const kSearchResultsPageSize = 30;
     return self;
 }
 
+- (void)handleError:(NSError *)error {
+    [self.view hideKeyboard];
+    [super handleError:error];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -71,10 +76,11 @@ static NSInteger const kSearchResultsPageSize = 30;
         } failureBlock:^(NSError *error) {
             [self.view endRefreshing];
             [[IndicatorController sharedInstance] hideIndicator];
+            [self handleError:error];
         }];
     }
 }
-                                              
+
 #pragma mark -
 #pragma mark Actions
 
@@ -110,6 +116,7 @@ static NSInteger const kSearchResultsPageSize = 30;
         [self.view endRefreshing];
     } failureBlock:^(NSError *error) {
         [self.view endRefreshing];
+        [self handleError:error];
     }];
 }
 

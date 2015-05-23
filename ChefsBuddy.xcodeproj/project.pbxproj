@@ -20,6 +20,7 @@
 		551B21971A6A902C005A34C7 /* UIImage+Solid.m in Sources */ = {isa = PBXBuildFile; fileRef = 551B21961A6A902C005A34C7 /* UIImage+Solid.m */; };
 		551B219B1A6AA07E005A34C7 /* RecipesManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 551B219A1A6AA07E005A34C7 /* RecipesManager.m */; };
 		5553737C1AA4535600D9399B /* SharedInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = 5553737B1AA4535600D9399B /* SharedInstance.m */; };
+		555F1AC31B108E080073DA00 /* AlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F1AC21B108E080073DA00 /* AlertController.m */; };
 		5565EA9B1ADFB75400058E15 /* SearchManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5565EA9A1ADFB75400058E15 /* SearchManager.m */; };
 		558392A51AB18B29002752EF /* ImageLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 558392A41AB18B29002752EF /* ImageLoader.m */; };
 		558392BB1AB1E7B1002752EF /* MenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 558392BA1AB1E7B1002752EF /* MenuView.m */; };
@@ -68,7 +69,6 @@
 		559DCC401AA8793F005CA160 /* IngredientCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 559DCC3F1AA8793F005CA160 /* IngredientCell.m */; };
 		559DCC421AA8794A005CA160 /* IngredientCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 559DCC411AA8794A005CA160 /* IngredientCell.xib */; };
 		55AFB0DC1A7D162700D9DDD6 /* ServiceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 55AFB0DB1A7D162700D9DDD6 /* ServiceManager.m */; };
-		55AFB0E91A7D253100D9DDD6 /* AlertManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 55AFB0E81A7D253100D9DDD6 /* AlertManager.m */; };
 		55B242801A9398010000FDC5 /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B2427F1A9398010000FDC5 /* CollectionViewCell.m */; };
 		55B242931A93A10F0000FDC5 /* HNKCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B242841A93A10F0000FDC5 /* HNKCache.m */; };
 		55B242941A93A10F0000FDC5 /* HNKDiskCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B242861A93A10F0000FDC5 /* HNKDiskCache.m */; };
@@ -163,6 +163,8 @@
 		5553737A1AA4535600D9399B /* SharedInstance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharedInstance.h; sourceTree = "<group>"; };
 		5553737B1AA4535600D9399B /* SharedInstance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharedInstance.m; sourceTree = "<group>"; };
 		555373801AA4551D00D9399B /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		555F1AC11B108E080073DA00 /* AlertController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AlertController.h; path = controllers/AlertController/AlertController.h; sourceTree = "<group>"; };
+		555F1AC21B108E080073DA00 /* AlertController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AlertController.m; path = controllers/AlertController/AlertController.m; sourceTree = "<group>"; };
 		5565EA991ADFB75400058E15 /* SearchManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchManager.h; path = managers/SearchManager/SearchManager.h; sourceTree = "<group>"; };
 		5565EA9A1ADFB75400058E15 /* SearchManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchManager.m; path = managers/SearchManager/SearchManager.m; sourceTree = "<group>"; };
 		558392A31AB18B29002752EF /* ImageLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImageLoader.h; path = managers/ImageLoader/ImageLoader.h; sourceTree = "<group>"; };
@@ -256,8 +258,6 @@
 		559DCC411AA8794A005CA160 /* IngredientCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = IngredientCell.xib; path = cells/IngredientCell/IngredientCell.xib; sourceTree = "<group>"; };
 		55AFB0DA1A7D162700D9DDD6 /* ServiceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ServiceManager.h; path = managers/ServiceManager/ServiceManager.h; sourceTree = "<group>"; };
 		55AFB0DB1A7D162700D9DDD6 /* ServiceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ServiceManager.m; path = managers/ServiceManager/ServiceManager.m; sourceTree = "<group>"; };
-		55AFB0E71A7D253100D9DDD6 /* AlertManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AlertManager.h; path = managers/AlertManager/AlertManager.h; sourceTree = "<group>"; };
-		55AFB0E81A7D253100D9DDD6 /* AlertManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AlertManager.m; path = managers/AlertManager/AlertManager.m; sourceTree = "<group>"; };
 		55B2427E1A9398010000FDC5 /* CollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CollectionViewCell.h; path = CollectionViewCell/CollectionViewCell.h; sourceTree = "<group>"; };
 		55B2427F1A9398010000FDC5 /* CollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CollectionViewCell.m; path = CollectionViewCell/CollectionViewCell.m; sourceTree = "<group>"; };
 		55B242821A93A10F0000FDC5 /* Haneke.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Haneke.h; sourceTree = "<group>"; };
@@ -555,6 +555,15 @@
 			path = patterns;
 			sourceTree = "<group>";
 		};
+		555F1AC01B108DE40073DA00 /* AlertController */ = {
+			isa = PBXGroup;
+			children = (
+				555F1AC11B108E080073DA00 /* AlertController.h */,
+				555F1AC21B108E080073DA00 /* AlertController.m */,
+			);
+			name = AlertController;
+			sourceTree = "<group>";
+		};
 		5565EA981ADFB73300058E15 /* SearchManager */ = {
 			isa = PBXGroup;
 			children = (
@@ -773,6 +782,7 @@
 		559DCC2F1AA74C25005CA160 /* controllers */ = {
 			isa = PBXGroup;
 			children = (
+				555F1AC01B108DE40073DA00 /* AlertController */,
 				55D692681ABC523900BC2932 /* IndicatorController */,
 				558392E81AB43EF6002752EF /* RecipesListViewController */,
 			);
@@ -796,15 +806,6 @@
 				55AFB0DB1A7D162700D9DDD6 /* ServiceManager.m */,
 			);
 			name = ServiceManager;
-			sourceTree = "<group>";
-		};
-		55AFB0E61A7D251C00D9DDD6 /* AlertManager */ = {
-			isa = PBXGroup;
-			children = (
-				55AFB0E71A7D253100D9DDD6 /* AlertManager.h */,
-				55AFB0E81A7D253100D9DDD6 /* AlertManager.m */,
-			);
-			name = AlertManager;
 			sourceTree = "<group>";
 		};
 		55B2427D1A9397E00000FDC5 /* CollectionViewCell */ = {
@@ -1142,7 +1143,6 @@
 		55D7F3961A67EF54004E4EB0 /* managers */ = {
 			isa = PBXGroup;
 			children = (
-				55AFB0E61A7D251C00D9DDD6 /* AlertManager */,
 				55B84CB31AA9996200B82C02 /* CacheManager */,
 				558392DB1AB43324002752EF /* ConfigurationManager */,
 				558392A21AB18B0B002752EF /* ImageLoader */,
@@ -1314,6 +1314,7 @@
 				55D692791ABD59CD00BC2932 /* RecipesCategory.m in Sources */,
 				559AAE1C1A8F557900FB46D3 /* QMKDeallocationGuard.m in Sources */,
 				55B84CD81AA9B0E500B82C02 /* MASViewConstraint.m in Sources */,
+				555F1AC31B108E080073DA00 /* AlertController.m in Sources */,
 				559DCBA81AA4B014005CA160 /* AFHTTPRequestOperationManager.m in Sources */,
 				558392A51AB18B29002752EF /* ImageLoader.m in Sources */,
 				55D273821A98B62500B4CCAA /* APIRecipe.m in Sources */,
@@ -1350,7 +1351,6 @@
 				55D273881A98B62500B4CCAA /* Recipe.m in Sources */,
 				5553737C1AA4535600D9399B /* SharedInstance.m in Sources */,
 				559AAE291A8F5BC000FB46D3 /* SearchView.m in Sources */,
-				55AFB0E91A7D253100D9DDD6 /* AlertManager.m in Sources */,
 				559AAE1D1A8F557900FB46D3 /* QMKInvocationFork.m in Sources */,
 				551B21521A6A772A005A34C7 /* UIBarButtonItem+Custom.m in Sources */,
 				55B242941A93A10F0000FDC5 /* HNKDiskCache.m in Sources */,

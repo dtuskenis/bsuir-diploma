@@ -75,6 +75,10 @@
     self.placeholderView.hidden = (self.searchResults.count > 0);
 }
 
+- (void)hideKeyboard {
+    [self.searchBar resignFirstResponder];
+}
+
 #pragma mark -
 #pragma mark UITableViewDataSource
 

@@ -16,4 +16,6 @@
 
 - (instancetype)initWithScreenManager:(ScreenManager *)screenManager;
 
+- (void)handleError:(NSError *)error;
+
 @end

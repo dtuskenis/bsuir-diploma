@@ -8,6 +8,7 @@
 
 #import "Screen.h"
 
+#import "AlertController.h"
 #import "UIBarButtonItem+Custom.h"
 #import "UIColor+Custom.h"
 
@@ -58,6 +59,12 @@
 
 - (void)backButtonTouched:(id)sender {
     [self.screenManager goBack];
+}
+
+- (void)handleError:(NSError *)error {
+    if ([error.domain isEqual:NSURLErrorDomain]) {
+        [[AlertController sharedInstance] showAlertWithController:self title:@"Error" message:@"Internet connection appears to be offline."];
+    }
 }
 
 @end
