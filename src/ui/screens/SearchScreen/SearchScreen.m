@@ -13,6 +13,7 @@
 #import "SearchManager.h"
 #import "SearchRequest.h"
 #import "UIBarButtonItem+Custom.h"
+#import "UINavigationItem+Custom.h"
 
 static NSInteger const kSearchResultsPageSize = 30;
 
@@ -50,9 +51,9 @@ static NSInteger const kSearchResultsPageSize = 30;
     [super viewDidLoad];
     
     if (self.searchRequest.categories.count > 0) {
-        self.navigationItem.title = [(RecipesCategory *)self.searchRequest.categories.firstObject name];
+        self.navigationItem.customTitle = [(RecipesCategory *)self.searchRequest.categories.firstObject name];
     } else {
-        self.navigationItem.title = NSLocalizedString(@"Search", nil);
+        self.navigationItem.customTitle = NSLocalizedString(@"Search", nil);
     }
     
     if (self.searchRequest == nil) {

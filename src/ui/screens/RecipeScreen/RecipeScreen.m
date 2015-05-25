@@ -11,6 +11,7 @@
 #import "FavoriteButton.h"
 #import "Recipe.h"
 #import "RecipesManager.h"
+#import "UINavigationItem+Custom.h"
 
 @interface RecipeScreen ()
 
@@ -42,7 +43,7 @@
     [favoriteButton setSelected:[self.recipesManager isFavoriteRecipe:self.recipe]];
     [favoriteButton addTarget:self action:@selector(favoriteButtonTouched:) forControlEvents:UIControlEventTouchUpInside];
     
-    self.navigationItem.title = @"Details";
+    self.navigationItem.customTitle = @"Details";
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:favoriteButton];
 }
 

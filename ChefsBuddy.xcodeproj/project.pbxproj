@@ -22,6 +22,7 @@
 		5553737C1AA4535600D9399B /* SharedInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = 5553737B1AA4535600D9399B /* SharedInstance.m */; };
 		555F1AC31B108E080073DA00 /* AlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F1AC21B108E080073DA00 /* AlertController.m */; };
 		5565EA9B1ADFB75400058E15 /* SearchManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5565EA9A1ADFB75400058E15 /* SearchManager.m */; };
+		5579E0441B131BCA007F382F /* UINavigationItem+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = 5579E0431B131BCA007F382F /* UINavigationItem+Custom.m */; };
 		558392A51AB18B29002752EF /* ImageLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 558392A41AB18B29002752EF /* ImageLoader.m */; };
 		558392BB1AB1E7B1002752EF /* MenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 558392BA1AB1E7B1002752EF /* MenuView.m */; };
 		558392C21AB1E809002752EF /* ViewContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 558392C11AB1E809002752EF /* ViewContainer.m */; };
@@ -167,6 +168,8 @@
 		555F1AC21B108E080073DA00 /* AlertController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AlertController.m; path = controllers/AlertController/AlertController.m; sourceTree = "<group>"; };
 		5565EA991ADFB75400058E15 /* SearchManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchManager.h; path = managers/SearchManager/SearchManager.h; sourceTree = "<group>"; };
 		5565EA9A1ADFB75400058E15 /* SearchManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchManager.m; path = managers/SearchManager/SearchManager.m; sourceTree = "<group>"; };
+		5579E0421B131BCA007F382F /* UINavigationItem+Custom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UINavigationItem+Custom.h"; path = "UINavigationItem+Custom/UINavigationItem+Custom.h"; sourceTree = "<group>"; };
+		5579E0431B131BCA007F382F /* UINavigationItem+Custom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UINavigationItem+Custom.m"; path = "UINavigationItem+Custom/UINavigationItem+Custom.m"; sourceTree = "<group>"; };
 		558392A31AB18B29002752EF /* ImageLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImageLoader.h; path = managers/ImageLoader/ImageLoader.h; sourceTree = "<group>"; };
 		558392A41AB18B29002752EF /* ImageLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImageLoader.m; path = managers/ImageLoader/ImageLoader.m; sourceTree = "<group>"; };
 		558392B91AB1E7B1002752EF /* MenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuView.h; path = MenuView/MenuView.h; sourceTree = "<group>"; };
@@ -409,6 +412,7 @@
 		551B214E1A6A7729005A34C7 /* categories */ = {
 			isa = PBXGroup;
 			children = (
+				5579E0411B131BA4007F382F /* UINavigationItem+Custom */,
 				551B214F1A6A7729005A34C7 /* UIBarButtonItem+Custom */,
 				551B218D1A6A8C5E005A34C7 /* UIColor+Custom */,
 				551B21941A6A8FFE005A34C7 /* UIImage+Solid */,
@@ -571,6 +575,15 @@
 				5565EA9A1ADFB75400058E15 /* SearchManager.m */,
 			);
 			name = SearchManager;
+			sourceTree = "<group>";
+		};
+		5579E0411B131BA4007F382F /* UINavigationItem+Custom */ = {
+			isa = PBXGroup;
+			children = (
+				5579E0421B131BCA007F382F /* UINavigationItem+Custom.h */,
+				5579E0431B131BCA007F382F /* UINavigationItem+Custom.m */,
+			);
+			name = "UINavigationItem+Custom";
 			sourceTree = "<group>";
 		};
 		558392A21AB18B0B002752EF /* ImageLoader */ = {
@@ -1348,6 +1361,7 @@
 				55AFB0DC1A7D162700D9DDD6 /* ServiceManager.m in Sources */,
 				55D273851A98B62500B4CCAA /* APISearchResult.m in Sources */,
 				551B218A1A6A7FFC005A34C7 /* UIView+Nib.m in Sources */,
+				5579E0441B131BCA007F382F /* UINavigationItem+Custom.m in Sources */,
 				55D273881A98B62500B4CCAA /* Recipe.m in Sources */,
 				5553737C1AA4535600D9399B /* SharedInstance.m in Sources */,
 				559AAE291A8F5BC000FB46D3 /* SearchView.m in Sources */,

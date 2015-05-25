@@ -12,6 +12,7 @@
 #import "IndicatorController.h"
 #import "SearchRequest.h"
 #import "UIBarButtonItem+Custom.h"
+#import "UINavigationItem+Custom.h"
 
 @interface CategoriesScreen () <CategoriesViewDelegate>
 
@@ -33,7 +34,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.navigationItem.title = NSLocalizedString(@"Categories", nil);
+    self.navigationItem.customTitle = NSLocalizedString(@"Categories", nil);
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem arrowsItemWithTarget:self action:@selector(arrowsButtonTouched:)];
     
     self.view.categories = [NSArray arrayWithArray:self.configurationManager.recipesCategories];

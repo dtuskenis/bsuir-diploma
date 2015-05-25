@@ -34,7 +34,6 @@
     [self setNeedsStatusBarAppearanceUpdate];
     [self.view setBackgroundColor:[UIColor clearColor]];
     self.edgesForExtendedLayout = UIRectEdgeNone;
-    self.navigationItem.leftBarButtonItem = [UIBarButtonItem backItemWithTarget:self action:@selector(backButtonTouched:)];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {

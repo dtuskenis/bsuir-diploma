@@ -14,6 +14,7 @@
 #import "RecipesManager.h"
 #import "UIBarButtonItem+Custom.h"
 #import "UIColor+Custom.h"
+#import "UINavigationItem+Custom.h"
 
 static NSString* const kRecentRecipes = @"Recent";
 static NSString* const kFavorites = @"Favorites";
@@ -45,7 +46,7 @@ static NSString* const kCategories = @"Categories";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.navigationItem.title = NSLocalizedString(kRecentRecipes, nil);
+    self.navigationItem.customTitle = NSLocalizedString(kRecentRecipes, nil);
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem menuItemWithTarget:self action:@selector(menuButtonTouched:)];
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem searchItemWithTarget:self action:@selector(searchButtonTouched:)];
     
@@ -80,12 +81,12 @@ static NSString* const kCategories = @"Categories";
     [self.menuViewContainer.view addItemWithTitle:kRecentRecipes icon:[UIImage imageNamed:@"icon_recent"] action:^{
         [self.view hideMenu];
         [self.view performTransitionToView:self.recentRecipesListViewController.view animated:YES];
-        self.navigationItem.title = kRecentRecipes;
+        self.navigationItem.customTitle = kRecentRecipes;
     }];
     [self.menuViewContainer.view addItemWithTitle:kFavorites icon:[UIImage imageNamed:@"icon_favorite_no"] action:^{
         [self.view hideMenu];
         [self.view performTransitionToView:self.favoriteRecipesListViewController.view animated:YES];
-        self.navigationItem.title = kFavorites;
+        self.navigationItem.customTitle = kFavorites;
     }];
 }
 
